@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """Usage:
-    host.py [-lvw] [--tcp] [-c CLASS] [-C | -t TYPE] [-W TIME | -w] [-G GTIME] <host>...
+    host.py [-lgivqw] [--tcp] [-c CLASS] [-t TYPE] [-W TIME] [-G GTIME] <host>...
     host.py -h | --help | --version
 
 Arguments:
@@ -10,22 +10,22 @@ Options:
     -h --help           Show this help message and exit
     --version           Show version and exit
     -v --verbose        Print verbose output
+    -q --quiet          Print less output
     -c CLASS            Specify class of the DNS request [default: IN]
     -C                  Attempt to display SOA records for from all the listed authoritative name servers.
+    -i                  Use IP6.INT instead of IP6.ARPA for reversing IPv6 addresses
     -t TYPE             Specify the type of request to make. Default is A, AAAA, and MX records.
     --tcp               Use TCP requests instead of UDP. TCP will be automatically selected for request that require it
     -W TIME             Timeout value for each query [default: 10]
-    -G GTIME            Global timeout for cmd [default: 40]
-    -w                  No timeout
+    -G GTIME            Global timeout for cmd [default: 30]
     -l                  Attempt a zone transfer for zone <hostname>
 
 """
 
-
-def formatA(answer):
-    for elem in answer.rrset:
-        print elem
-
+from dns import resolver, reversename, name
+from docopt import docopt
+import re
+__author__ = 'Ep0ch'
 
 def formatInfoVerb(tab):
     ret = []
@@ -47,40 +47,42 @@ def formatInfoVerb(tab):
             print strt
 
 
-__author__ = 'Ep0ch'
-# print __doc__
-import dns.resolver
-from docopt import docopt
-
-arg = docopt(__doc__, version='0.1rc')
-r = dns.resolver.Resolver()
+arg = docopt(__doc__, version='0.2rc')
+r = resolver.Resolver()
 # -- ASSIGN --
+
 r.lifetime = float(arg['-G'])
 r.timeout = float(arg['-W'])
+ip_checker = re.compile('(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))')
 
-types = []
 
-if arg['-t']:
-    types.append(arg['-t'])
-else:
-    types.append('A')
-    types.append('AAAA')
-    types.append('MX')
-for type in types:
-    for target in arg['<host>']:
-        answer = r.query(target, type, arg['-c'], arg['--tcp'], raise_on_no_answer=False)
-        # print 'RDType ',answer.rdtype
-        # print 'QNAME ', answer.qname
-        # print 'RDClass ', answer.rdclass
+for target in arg['<host>']:
+    if arg['-t']:
+        types = [arg['-t']]
+    elif ip_checker.match(target): #Absolute IP
+        target = reversename.from_address(target)
+        if arg['-i']:
+            target = name.from_text(target.__str__()[:-5] + 'int')
+        print target
+        types = ['PTR']
+    else:
+        types = ['A', 'AAAA', 'MX']
+    for type in types:
+        try:
+            answer = r.query(target, type, arg['-c'], arg['--tcp'], raise_on_no_answer=False)
+        except resolver.NXDOMAIN:
+            print "Invalid request"
+            exit()
+        except resolver.Timeout:
+            print "Didn't found any answers in required time"
+            exit()
         if arg['--verbose']:
             print "=" * 80
             print "[*] Try for", target, 'with query', type, '[*]'
             formatInfoVerb(answer.response.__str__().splitlines())
         elif answer.rrset:
-            formatA(answer)
+            for ret in answer.rrset:
+                print target, 'has', type, 'record', ret
         else:
             print target, 'has no', type, 'record'
-
-# for rdata in r.query(sys.argv[1], sys.argv[2]):
-#     print 'Host', rdata
 
