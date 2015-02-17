@@ -37,4 +37,4 @@ class server:
 
 arg = docopt(__doc__, version = '0.1')
 listener = server()
-listener.listen(input(arg['<port>'])) #REALLY BAD
+listener.listen(eval(arg['<port>']))

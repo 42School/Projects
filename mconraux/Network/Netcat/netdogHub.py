@@ -2,8 +2,8 @@
 """NetDog, just another network tool.
 
 Usage:
-    netdogChat.py [-t <threads>] <port>
-    netdogChat.py -h | --help | --version
+    netdogHub.py [-t <threads>] <port>
+    netdogHub.py -h | --help | --version
 
 Options:
     -t <threads>        specify a number of threads to be used [default: 5]
@@ -20,8 +20,6 @@ class listener(threading.Thread):
     self.SOCK = socket
     self.ADDR = address
   def run(self):
-    self.SOCK.send("Please, choose a name ! : ")
-    self.name = self.SOCK.recv(1024).rstrip()
     with lock:
       clients.append(self)
     print "[*] Connected to", self.ADDR[0], 'as', self.name, "!"
@@ -29,10 +27,9 @@ class listener(threading.Thread):
       data = self.SOCK.recv(1024)
       if not data or data == '\n': #Stop client on newline or EOF
         break #EOF
-      print "["+self.name+"]:",data.rstrip()
       for bro in clients:
         if bro != self:
-          bro.SOCK.send('['+self.name + ']: ' + data)
+          bro.SOCK.send(data)
     self.SOCK.close()
     with lock:
       clients.remove(self)
