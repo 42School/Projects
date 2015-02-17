@@ -12,7 +12,6 @@ Options:
     -v --verbose        Print verbose output
     -q --quiet          Print less output
     -c CLASS            Specify class of the DNS request [default: IN]
-    -C                  Attempt to display SOA records for from all the listed authoritative name servers.
     -i                  Use IP6.INT instead of IP6.ARPA for reversing IPv6 addresses
     -t TYPE             Specify the type of request to make. Default is A, AAAA, and MX records.
     --tcp               Use TCP requests instead of UDP. TCP will be automatically selected for request that require it
@@ -85,4 +84,3 @@ for target in arg['<host>']:
                 print target, 'has', type, 'record', ret
         else:
             print target, 'has no', type, 'record'
-
