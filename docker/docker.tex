@@ -1,0 +1,255 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% test.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Authors:
+% - Jean-Jacques MOIROUX
+%
+% Contributors:
+% - Unknown for now
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\documentclass{42}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Prologue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%Table des matieres
+\title{Docker On Mac}
+\subtitle{Parce que Linux c'est trop simple}
+
+\member {42 staff}{staff@42.fr}
+\member {Jean-Jacques MOIROUX}{jmoiroux@student.42.fr}
+
+\summary
+{
+	Se projet a pour but de vous faire découvrir les bases de Docker, Docker a de multiples utilisations, ne vous limitez pas à l’utilisation de Docker conseillée dans divers tutoriaux sur le web.
+	A la fin de ce sujet vous saurez écrire des Dockerfiles (c’est un petit fichier qui permet de décrire la generation de conteneur Linux)
+}
+
+\maketitle
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Preambule}
+Docker from Wikipedia (http://fr.wikipedia.org/wiki/Docker)
+\newline
+\newline
+Il existe différents noms communs pour désigner la profession qui exerce cette activité selon les régions du monde.
+\newline
+\newline
+Le mot débardeur attesté dès le xvie siècle en français classique1 est probablement formé du préfixe dé et de la racine bard (dont l'étymologie reste controversée) : bard désignant depuis l'ancien français (xiie siècle) une « sorte de brancard à claire-voie utilisé pour le transport de fardeaux »1. Littéralement, le débardeur est l'ouvrier portuaire qui procède au débardage (ou débarde), c'est-à-dire qui décharge à quai toutes sortes de marchandises.
+\newline
+\newline
+Le mot docker, contraction de l'anglais dockworker (littéralement, « ouvrier du quai »), est attesté pour la première fois en français à la fin du xixe siècle et s'est peu à peu répandu dans la majorité des ports du monde au cours du xxe siècle avec la mondialisation des échanges et la suprématie économique du monde anglo-saxon. Toutefois, le terme débardeur, moins usité de nos jours en Europe, s'est maintenu plus largement au Québec2.
+\newline
+\newline
+Débardeurs au port de Cap-Haïtien : le transport avec peu de moyens mécaniques est encore pratiqué dans les pays en développement.
+\newline
+\newline
+Dockers chargement de la cargaison en sac - MV Rothstein, Port-Soudan en 1960
+À Marseille entre autres, le terme de portefaix était utilisé pour désigner la corporation qui œuvrait sur le Vieux Port pendant la marine à voile qui n'avait pas seulement un rôle de déchargement ou de chargement de la marchandise mais aussi une spécialisation dans connaissance de la qualité du produit manipulé, les portefaix représentaient aussi les intérêt du négociant -Maitre Portefaix- et avaient aussi le rôle d'acheminer la marchandises dans les magasins3..
+\newline
+\newline
+Le terme aconier, parfois écrit acconier (ou l'anglicisme stevedore), recouvre des notions proches mais néanmoins différentes d'un point de vue juridique. De fait, l'aconier est l'entrepreneur dont le métier consiste à préparer matériellement et juridiquement les opérations de réception, de déplacement et d’entreposage de marchandises transportées par voie maritime et est donc l'employeur des débardeurs.
+
+\newpage
+
+\chapter{Sujet}
+\section{Consigne}
+\begin{itemize}
+	\item Le sujet sera corrigé par des humains.
+	\item Les containers lors de la soutenance seront hébergés sur votre machine en local.
+	\item Interdiction de faire une soutenance avec un container sur une machine distante, relire la règle juste au-dessus au cas où vous n’auriez pas compris cette règle-ci.
+	\item Il est fortement conseillé pour chaque mission de fournir un script .sh pour lancer le container, le correcteur POURRA vérifier ce script de lancement.
+	\item Vous pouvez utiliser Ubuntu, Debian ou autres du moment que l'arborescence suivante est respectée “/home/login” (/home/user). Vous trouverez des images officielles sur Docker Hub.
+\end{itemize}
+
+\newpage
+
+\section{Missions 0}
+{\Huge Installer Docker sur Mac}
+\newline
+\newline
+
+Rendre vos fichiers pour soutenance dans mission00 (s’il y en a)
+\newline
+\newline
+Installer Docker sur votre session Mac, il est fort probable que vous ayez besoin d’utiliser Brew et Boot2docker.
+\newline
+Dans le cas où Brew ne fonctionne pas sur votre session, au lieu de perdre du temps à vous plaindre auprès de la pédago, demandez à votre voisin de droite ou de gauche de copier son répertoire ~/.brew et de vous le copier en totalité.
+\newline
+Il est possible d’installer Docker en utilisant des VM, mais dans ce cas-ci Docker perd tout son intérêt.
+\newline
+\newline
+Montrez à votre correcteur qu’un “docker" fonctionne.
+\newline
+Exemple:
+\begin{42ccode}
+$>docker info
+Containers: 0
+Images: 0
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 0
+Execution Driver: native-0.2
+Kernel Version: 3.16.0-30-generic
+Operating System: Ubuntu 14.10
+CPUs: 2
+Total Memory: 3.633 GiB
+Name: ubuntu
+ID: PDDP:L64U:RQBT:G5ET:TEAC:XIJK:7JMR:ZVJW:NWU3:JMMD:YV36:WRUM
+WARNING: No swap limit support
+$>
+\end{42ccode}
+
+\newpage
+
+\section{Missions 1}
+{\Huge "Hello Wolrd"}
+\newline
+\newline
+
+Rendre vos fichiers pour soutenance dans mission01: le cript du lancement du container (non obligatoire)
+\newline
+\newline
+Afficher “Hello Wolrd” dans votre navigateur à l’url suivant
+    “IPContainer:[xxxx]” ou
+“localhost:[xxxx]” (si vous trouvez comment faire)
+où [xxxx] est le port fournit par Docker pour accéder au container hébergeant le serveur web
+\newline
+\newline
+A la soutenance le correcteur lancera le container hello/wolrd:v42 ( [REPOSITORY]:[TAG] ) en mode interactif, le prompt du container devra afficher
+\begin{42ccode}
+login@42born2code:/#
+\end{42ccode}
+
+\newpage
+
+\section{Missions 2}
+{\Huge SSH Localhost}
+\newline
+\newline
+
+Rendre vos fichiers pour soutenance dans mission02: le Dockerfile et les fichiers ajoutés à l’exécution du build de l’image (autant que besoin pour l’accomplissement de la mission)
+\newline
+\newline
+Ecrire un Dockerfile:
+Au “build” du container OpenSSH sera configuré automatiquement sur le port 42 (interne au container).
+\newline
+Votre clé SSH PUBLIC (ne jamais donner sa clé PRIVEE) sera pré-configurée dans votre
+\begin{42ccode}
+~/home/login/.ssh/authorized_keys
+\end{42ccode}
+dans le container pour accepter les connexions provenant de votre clé SSH publique, ainsi vous pourrez vous connecter dans votre container.
+\newline
+\newline
+A la soutenance votre correcteur devra “build” votre “Dockerfile” et lancer votre container en mode daemon, se connecter directement dans le container avec la commande suivante
+\begin{42ccode}
+ssh login@IPContainer -p [yyyy] #ou
+ssh login@localhost -p [yyyy] #(si vous trouvez comment faire)
+\end{42ccode}
+où [yyyy] est le port fournit par Docker pour accéder au container (docker ps).
+\newline
+\newline
+Soutenance:
+\newline
+Le correcteur buildera votre Dockerfile, lancera le container en mode daemon et se connectera directement en SSH (3 commandes, pas 4)
+\newline
+\newline
+\info
+{
+	Bonne pratique: un container sécurisé ne permet pas de connexion SSH
+}
+
+\newpage
+
+\section{Missions 3}
+{\Huge Volumes on MacOS X (C’est tellement simple sur Linux)}
+\newline
+\newline
+
+Rendre vos fichiers pour soutenance dans mission03 (s’il y en a)
+\newline
+\newline
+Trouver un moyen de partager un répertoire de la machine physique avec un répertoire à l'intérieur du container (montage Volume).
+On est au courant c’est moche, mais vous aurez juste à montrer lors de la soutenance qu’un 
+“touch filetest”
+dans le répertoire partagé est bien synchronisé avec le répertoire interne du container
+\newline
+\newline
+Attention: ici on ne vous demande pas un container/volume (“--volume”) comme il est possible de faire de base mais bien avec l’option “-v répertoire:répertoire” au lancement du container
+
+\newpage
+
+\chapter{Bonus}
+
+Pour le rendu des bonus d'environnements complet:
+\newline
+chaque bonus sera nommé bonus01, bonus02 …. bonus[xx].
+\newline
+\newline
+Dans chacun de ses répertoires il y aura un Dockerfile et les fichiers joints lors de l’exécution du build (une création d'environnement ne devrait pas dépasser les 500Ko par bonus, Dockerfile compris)
+\newline
+\newline
+Pourquoi ne pas générer des Dockerfile pour des environnements multiples, par exemples:
+\newline
+\begin{itemize}
+	\item environnement de développement pour RubyOnRails, servi par Nginx et PostgresSQL.
+	\item environnement Django, avec du NoSQL par exemple.
+	\item environnement Php.
+	\item environnement Java prêt à être déployé.
+\end{itemize}
+Ce sont des idées, vous devrez convaincre votre correcteur que votre Dockerfile peut faire gagner des demi-journées d’installation voir des semaines pour la mise en production d'environnements Linux.
+\newline
+\newline
+D’autres exemples:
+\newline
+\begin{itemize}
+	\item Externaliser (monter en Volume) les logs Linux /var/log (comme cela votre image Docker ne grossira pas).
+	\item Externaliser une base de données dans un répertoire pour la persistance des données par exemple.
+	\item Lancer un container à l'intérieur d’un container (Légende urbaine).
+	\item Déplacer la VM Boot2docker sur le goinfre pour alléger votre session.
+\end{itemize}
+
+Expliquer à votre correcteur comment vous y êtes arrivé lors de la soutenance.
+
+
+\chapter{Conclusion}
+
+Si vous terminez ce projet avec le dernier bonus proposé, vous aurez peut-être remarqué que vous disposez à présent d’un environnement Linux en ROOT avec dossier partagé et un processus qui consomme \% de votre CPU, pour la mémoire c’est la même idée, tout vos problèmes de VM sont réglés.
+\newline
+Docker n’est pas une VM.
+\newline
+\newline
+Si ça marche en local dans un container, ce même container marchera sur le serveur de production à distance.
+\newline
+\newline
+Il y a une multitude d’options à découvrir sur www.docker.com, ne vous arrêtez pas à ce sujet.
+Docker sous Linux n’a pas de sur-couche Boot2docker, vous aurez un accès direct à Docker.
+Voir aussi LXC d’où découle l'idée de Docker.
+\newline
+\newline
+\newline
+\newline
+Bon jeu !!!
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
