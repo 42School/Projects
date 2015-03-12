@@ -1,3 +1,6 @@
 [submodule "templates"]
 	path = templates
 	url = git@github.com:42School/templates.git
+[submodule "scale_validator"]
+	path = scale_validator
+	url = git@github.com:42School/scale_validator.git
