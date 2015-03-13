@@ -87,12 +87,11 @@ sections:
 
   questions:
 
-  - name: Premiere question
+  - name: Docker fonctionne-t-il ?
     guidelines: |
 
       La commande “docker” doit vous retourner une liste de commandes
       pour utiliser Docker, cela veut dire que Docker est bien installé.
-      Docker fonctionne-t-il ?
 
     rating: bool
     kind: standard
@@ -100,10 +99,8 @@ sections:
     - percentage: 10
       name: Technology integration
 
-  - name: Deuxieme question
+  - name: Docker est-il installé par l’utilisation de boot2docker ?
     guidelines: |
-
-      Docker est-il installé par l’utilisation de boot2docker ?
 
     rating: bool
     kind: standard
@@ -119,7 +116,7 @@ sections:
 
   questions:
 
-  - name: Premiere question
+  - name: Affichage du “Hello World” dans un navigateur, à l’adresse d’un container Docker
     guidelines: |
 
       Attention, en tant que correcteur vous devez être sûr que l’affichage
@@ -159,10 +156,8 @@ sections:
   #################################
   #################################
   #################################
-  - name: Deuxième question
+  - name: A utilisé une option spécifique lors du “docker build” pour le nom de l’image
     guidelines: |
-
-        A utilisé une option spécifique lors du “docker build” pour le nom de l’image
 
     rating: bool
     kind: standard
@@ -178,10 +173,8 @@ sections:
   #################################
   #################################
   #################################
-  - name: Troisième question
+  - name: Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
     guidelines: |
-
-        Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
 
     rating: bool
     kind: standard
@@ -197,10 +190,12 @@ sections:
     #################################
     #################################
     #################################
-  - name: quatrième question
+  - name: A utilisé une option spécifique lors du “docker run” du container:
     guidelines: |
 
-        Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
+      S’il a fait une manipulation dans le container pour arriver au même résultat:
+      ça veut dire qu’il s’est pris la tête pour le faire, donc faites lui comprendre
+      que c’est un noob
 
     rating: bool
     kind: standard
@@ -213,18 +208,129 @@ sections:
 
     - percentage: 20
       name: Technology integration
-    #################################
-    #################################
-    #################################
 
 
 ##################################################################
 ### MISSION 02
 ###
+- name: MISSION 02
+  description: 'SSH Localhost'
+
+
+  questions:
+
+
+  - name: Build du Dockerfile réussi
+    guidelines: |
+
+      Comme expliqué dans le sujet, il est interdit de SSH une machine distante,
+      la soutenance se fait sur des containers en local, vérifiez que la commande
+      de connexion ssh est bien effectuée sur l’IP de “boot2docker ip”.
+
+      Dans le dépôt il doit être présent un répertoire mission02, à l’intérieur
+      il y a au minimum un fichier nommé “Dockerfile”. Il y en aura d’autres,
+      le corrigé vous expliquera à quoi ils servent.
+
+      Construire l’image à partir du Dockerfile faites-vous aider par le corrigé
+      (une seule commande) à la fin du build le shell vous retournera
+        “Successfully built [idImage]”
+      Ce qui confirmera que la construction de l’image a réussi
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
+  #################################
+  #################################
+  #################################
+  - name: Connexion SSH réussie
+    guidelines: |
+
+      Lancer l’image générée précédemment (idImage) en mode daemon
+      “docker run -d…” aidez-vous du corrigé
+
+      Comme pour la mission01, récupérez le port de redirection qui est lié au
+      port 42 interne au container (“docker ps”) ex:
+      0.0.0.0:49159->42
+
+      Connectez-vous en SSH sur le container
+        “ssh login@IPContainer -p port” ou “ssh root@IPContainer -p port”
+
+      Le shell pourrait vous demander si vous acceptez la connection sur la dite IP, “yes”
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
+  #################################
+  #################################
+  #################################
+  - name: Connexion SSH réussie sur le port 42 interne du container
+    guidelines: |
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
 
 ##################################################################
 ### MISSION 03
 ###
+- name: MISSION 03
+  description: 'Montage Volumes'
+
+  questions:
+
+  - name: Montage répertoire en Volume dans un container
+    guidelines: |
+
+      Il y a plusieurs méthodes pour monter des répertoires (sur la machine physique)
+      en volume dans un container, mais elles ont toutes un point commun : au lancement
+      du container, l’option
+        “-v répertoirePhysique:répertoireContainer”
+      doit être renseignée au moins une fois lors de la commande docker run
+      De la même manière, il n’est pas demandé de faire un montage volume de cette sorte
+        “--volume”
+
+      Le corrigé vous expliquera comment il a fait
+
+      Pour tester le partage, il suffira de faire un
+        “touch filetest”
+      dans le répertoire partagé et de faire un “ls” de l’autre côté. testez réciproquement
+      la manipulation pour être sûr que le partage fonctionne bien dans les deux sens
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
 
 ##################################################################
 ### BONUS
@@ -232,9 +338,7 @@ sections:
 - name: Bonus
   description: ''
 
-
   questions:
-
 
   - name: Premier bonus
     guidelines: |
@@ -242,21 +346,6 @@ sections:
       Description...
 
     rating: bool
-    kind: bonus
-    questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
-
-
-  - name: Deuxieme bonus
-    guidelines: |
-
-      Idem.
-
-    rating: multi
     kind: bonus
     questions_skills:
     - percentage: x
