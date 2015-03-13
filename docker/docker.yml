@@ -62,17 +62,20 @@ sections:
       continuer de débattre du projet, mais le barème n'est pas
       appliqué.
 
-#    rating: bool
-#    kind: standard
-#    questions_skills:
-#    - percentage: 45
-#      name: Network & system administration
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
 
-#    - percentage: 35
-#      name: Unix
+    - percentage: 0
+      name: Network & system administration
 
-#    - percentage: 20
-#      name: Technology integration
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
 ##################################################################
 ##################################################################
 ### MISSION 00
@@ -91,6 +94,12 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
     - percentage: 10
       name: Technology integration
 
@@ -105,6 +114,15 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
     - percentage: 5
       name: Organization
 ##################################################################
@@ -150,6 +168,12 @@ sections:
 
     - percentage: 10
       name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 15
+      name: Organization
   #################################
   #################################
   #################################
@@ -159,14 +183,17 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
-      - percentage: 10
-        name: Unix
+    - percentage: 0
+      name: Unix
 
-      - percentage: 10
-        name: Network & system administration
+    - percentage: 5
+      name: Network & system administration
 
-      - percentage: 15
-        name: Organization
+    - percentage: 15
+      name: Technology integration
+
+    - percentage: 15
+      name: Organization
   #################################
   #################################
   #################################
@@ -187,10 +214,10 @@ sections:
 
     - percentage: 15
       name: Organization
-    #################################
-    #################################
-    #################################
-  - name: A utilisé une option spécifique lors du “docker run” du container:
+  #################################
+  #################################
+  #################################
+  - name: A utilisé une option spécifique lors du “docker run” du container
     guidelines: |
 
       S’il a fait une manipulation dans le container pour arriver au même résultat:
@@ -200,8 +227,17 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
     - percentage: 15
       name: Technology integration
+
+    - percentage: 0
+      name: Organization
 ##################################################################
 ##################################################################
 ### MISSION 02
@@ -241,7 +277,6 @@ sections:
 
     - percentage: 30
       name: Organization
-
   #################################
   #################################
   #################################
@@ -268,6 +303,12 @@ sections:
 
     - percentage: 30
       name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
   #################################
   #################################
   #################################
@@ -282,6 +323,9 @@ sections:
 
     - percentage: 30
       name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
 
     - percentage: 10
       name: Organization
@@ -318,8 +362,14 @@ sections:
     - percentage: 30
       name: Unix
 
+    - percentage: 0
+      name: Network & system administration
+
     - percentage: 30
       name: Technology integration
+
+    - percentage: 0
+      name: Organization
 ##################################################################
 ##################################################################
 ### BONUS

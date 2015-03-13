@@ -6,27 +6,41 @@ FROM ubuntu:14.04
 MAINTAINER Jean-Jacques MOIROUX <jjmoiroux@gmail.com>
 
 RUN apt-get update
-RUN apt-get install texlive-latex-base
+RUN apt-get install -y texlive-latex-base
 
 # Probleme de package langue
-RUN apt-get install texlive-lang-french
+RUN apt-get install -y texlive-lang-french
 
 # ! LaTeX Error: File `xcolor.sty' not found.
-RUN apt-get install latex-xcolor texlive-fonts-recommended
+RUN apt-get install -y latex-xcolor texlive-fonts-recommended
 
 # ! LaTeX Error: File `ifplatform.sty' not found.
-RUN apt-get install texlive-latex-extra
+RUN apt-get install -y texlive-latex-extra
 
 #! Package minted Error: You must have `pygmentize' installed to use this package.
-RUN apt-get install python-pygmen
+RUN apt-get install -y python-pygments
+
+RUN apt-get install -y curl
 
 # Clean up APT when done.
 RUN apt-get clean ; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ## install RVM && ruby 2.1.2
+RUN apt-get install -y curl
 RUN /bin/bash -l -c  "command curl -sSL https://rvm.io/mpapis.asc | gpg --import -"
 RUN \curl -sSL https://get.rvm.io | bash -s stable
 RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.1.2"
 RUN /bin/bash -l -c "gem install bundler"
 RUN /bin/bash -l -c "rvm use 2.1.2 --default"
+
+
+
+
+################## END
+################## PUIS
+
+Lancer le container et installer la gem pour le scale_alidator
+	gem install kwalify
+
+Latex fonctionne ainsi que le scale_validator
