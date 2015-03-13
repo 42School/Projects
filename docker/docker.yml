@@ -1,5 +1,7 @@
+# https://docs.google.com/document/d/12rWC-7hZ66kTZBNhjtN-wh1huBwyFEt_8pta5QAWQuE/edit?usp=sharing
+# Correction original
 ---
-name: Nom du projet
+name: Docker
 
 is_primary: true
 comment: ''
@@ -31,7 +33,7 @@ guidelines_md: |
   Si le correcteur n'a pas encore fait ce projet, il est obligatoire
   de lire le sujet en entier avant de commencer cette soutenance.
 
-correction_number: 3
+correction_number: 5
 duration: 2
 
 
@@ -50,14 +52,14 @@ sections:
 
       Vérifiez d'abord les éléments suivants :
 
-      - Il y a bien un rendu (dans le dépôt git)
+      - Il y a bien un rendu (dans le dépôt git), seule la mission 02 necessite un rendu obligatoire.
 
       - Pas de triche, les deux étudiants doivent pouvoir expliquer
         leur code.
 
       - Toute la correction se déroule en local, les images, containers et autres seront hébergés
-      sur la machine en local. S'il y a un une seule mission d'effectue sur une machine a distance,
-      la correction s'arrête
+      sur la machine en local. S'il y a une seule mission d'effectué sur une machine à distance,
+      la correction s'arrête. Rendu invalide.
 
       Si un élément de cette liste n'est pas respecte, la notation
       s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
@@ -68,51 +70,165 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
-    - percentage: 0
+    - percentage: 45
       name: Network & system administration
-      ...
-    - percentage: 0
-      name: <nom de la skill n>
 
+    - percentage: 35
+      name: Unix
 
-- name: Premiere section
-  description: 'La description de la premiere section'
+    - percentage: 20
+      name: Technology integration
 
+##################################################################
+### MISSION 00
+###
+- name: Mission 00
+  description: 'Installer Docker sur Mac'
 
   questions:
-
 
   - name: Premiere question
     guidelines: |
 
-      Guidelines de la premiere question utilisant la syntaxe block de
-      YAML. Notez le caractere '|' juste au dessus.
+      La commande “docker” doit vous retourner une liste de commandes
+      pour utiliser Docker, cela veut dire que Docker est bien installé.
+      Docker fonctionne-t-il ?
 
     rating: bool
     kind: standard
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 10
+      name: Technology integration
 
   - name: Deuxieme question
     guidelines: |
 
-      Idem.
+      Docker est-il installé par l’utilisation de boot2docker ?
 
-    rating: multi
+    rating: bool
     kind: standard
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 10
+      name: Technology integration
+
+##################################################################
+### MISSION 01
+###
+- name: Premiere section
+  description: '”Hello Wolrd”'
+
+  questions:
+
+  - name: Premiere question
+    guidelines: |
+
+      Attention, en tant que correcteur vous devez être sûr que l’affichage
+      de la page n’est pas généré par un processus physique au Mac, le corrigé
+      doit vous prouver qu’il y a bien un serveur web dans un container Docker
+      qui affiche la page.
+
+      Pour rechercher le port du serveur web, vous devez taper dans la console
+      de la machine physique (pas dans un container)
+      “docker ps”
+      En sortie à la colonne PORTS, vous aurez plusieurs redirection de port, par
+      défaut le port web interne du container est le port 80, il est possible que
+      le corrigé ait mis sa page web sur un autre port.
+
+      Cherchez la flèche qui correspond 0.0.0.0:xxxxx->yy ex
+        0.0.0.0:49168->80/tcp
+
+      Pour l’IP vous devrez taper dans une console du Mac (pas dans un container)
+        “boot2docker ip”
+      En sortie le shell vous retourne l’IP d’où est accessible le container ex
+        192.168.59.103
+
+      Au final pour accéder au hellowolrd vous aurez donc dans cet exemple
+        192.168.59.103:49168
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
+  #################################
+  #################################
+  #################################
+  - name: Deuxième question
+    guidelines: |
+
+        A utilisé une option spécifique lors du “docker build” pour le nom de l’image
+
+    rating: bool
+    kind: standard
+    questions_skills:
+      - percentage: 20
+        name: Network & system administration
+
+      - percentage: 20
+        name: Unix
+
+      - percentage: 20
+        name: Technology integration
+  #################################
+  #################################
+  #################################
+  - name: Troisième question
+    guidelines: |
+
+        Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
+    #################################
+    #################################
+    #################################
+  - name: quatrième question
+    guidelines: |
+
+        Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Technology integration
+    #################################
+    #################################
+    #################################
 
 
+##################################################################
+### MISSION 02
+###
 
+##################################################################
+### MISSION 03
+###
+
+##################################################################
+### BONUS
+###
 - name: Bonus
   description: ''
 
