@@ -109,7 +109,10 @@ sections:
   #################################
   #################################
   - name: Docker est-il installé par l’utilisation de boot2docker ?
-    guidelines: ''
+    guidelines: |
+
+      Sa serait vraiment dommage d’avoir utilisé un VM pour cela, Docker perd tout son interêt
+
     rating: bool
     kind: standard
     questions_skills:
@@ -177,7 +180,9 @@ sections:
   #################################
   #################################
   - name: A utilisé une option spécifique lors du “docker build” pour le nom de l’image
-    guidelines: ''
+    guidelines: |
+      --tag="" par exemple
+
     rating: bool
     kind: standard
     questions_skills:
@@ -196,7 +201,11 @@ sections:
   #################################
   #################################
   - name: Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
-    guidelines: ''
+    guidelines: |
+      S’il a fait une manipulation dans le container pour arriver au même
+      résultat, ça veut dire qu’il s’est comliqué la vie pour le faire, donc faites lui
+      comprendre que c’est un noob
+
     rating: bool
     kind: standard
     questions_skills:
@@ -310,7 +319,9 @@ sections:
   #################################
   #################################
   - name: Connexion SSH réussie sur le port 42 interne du container
-    guidelines: ''
+    guidelines: |
+      Dans la configuration du serveur SSH, l port configuré est le port 42
+
     rating: bool
     kind: standard
     questions_skills:
