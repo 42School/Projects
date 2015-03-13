@@ -48,17 +48,17 @@ sections:
 
       Vérifiez d'abord les éléments suivants :
 
-      - Il y a bien un rendu (dans le dépôt git), seule la mission 02 necessite un rendu obligatoire.
+      - Il y a bien un rendu (dans le dépôt git), seule la mission 02 nécessite un rendu obligatoire.
 
       - Pas de triche, les deux étudiants doivent pouvoir expliquer
         leur code.
 
       - Toute la correction se déroule en local, les images, containers et autres seront hébergés
-      sur la machine en local. S'il y a une seule mission d'effectué sur une machine à distance,
+      sur la machine en local. S'il y a une seule mission d'effectuée sur une machine à distance,
       la correction s'arrête. Rendu invalide.
 
-      Si un élément de cette liste n'est pas respecte, la notation
-      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      Si un élément de cette liste n'est pas respecté, la notation
+      s'arrête là. Utilisez le flag approprié. Vous êtes encouragés à
       continuer de débattre du projet, mais le barème n'est pas
       appliqué.
 
@@ -108,10 +108,10 @@ sections:
   #################################
   #################################
   #################################
-  - name: Docker est-il installé par l’utilisation de boot2docker ?
+  - name: Docker est-il installé grâce à l’utilisation de boot2docker ?
     guidelines: |
 
-      Sa serait vraiment dommage d’avoir utilisé un VM pour cela, Docker perd tout son interêt
+      Ce serait vraiment dommage d’avoir utilisé une VM pour cela, Docker perd tout son interêt.
 
     rating: bool
     kind: standard
@@ -131,23 +131,23 @@ sections:
 ##################################################################
 ### MISSION 01
 ###
-- name: Premiere section
+- name: Première section
   description: '”Hello Wolrd”'
 
   questions:
 
-  - name: Affichage du “Hello World” dans un navigateur, à l’adresse d’un container Docker
+  - name: Affichage de “Hello World” dans un navigateur, à l’adresse d’un container Docker
     guidelines: |
 
       Attention, en tant que correcteur vous devez être sûr que l’affichage
-      de la page n’est pas généré par un processus physique au Mac, le corrigé
+      de la page n’est pas généré par un processus physique du Mac, le corrigé
       doit vous prouver qu’il y a bien un serveur web dans un container Docker
       qui affiche la page.
 
       Pour rechercher le port du serveur web, vous devez taper dans la console
       de la machine physique (pas dans un container)
       “docker ps”
-      En sortie à la colonne PORTS, vous aurez plusieurs redirection de port, par
+      En sortie à la colonne PORTS, vous aurez plusieurs redirections de port. Par
       défaut le port web interne du container est le port 80, il est possible que
       le corrigé ait mis sa page web sur un autre port.
 
@@ -160,7 +160,7 @@ sections:
       --]  192.168.59.103
 
       Au final pour accéder au hellowolrd vous aurez donc dans cet exemple
-        192.168.59.103:49168
+      --]  192.168.59.103:49168
 
     rating: bool
     kind: standard
@@ -204,7 +204,7 @@ sections:
     guidelines: |
       S’il a fait une manipulation dans le container pour arriver au même
       résultat, ça veut dire qu’il s’est comliqué la vie pour le faire, donc faites lui
-      comprendre que c’est un noob
+      comprendre que c’est un noob.
 
     rating: bool
     kind: standard
@@ -228,7 +228,7 @@ sections:
 
       S’il a fait une manipulation dans le container pour arriver au même résultat:
       ça veut dire qu’il s’est pris la tête pour le faire, donc faites lui comprendre
-      que c’est un noob
+      que c’est un noob.
 
     rating: bool
     kind: standard
@@ -264,10 +264,10 @@ sections:
       il y a au minimum un fichier nommé “Dockerfile”. Il y en aura d’autres,
       le corrigé vous expliquera à quoi ils servent.
 
-      Construire l’image à partir du Dockerfile faites-vous aider par le corrigé
-      (une seule commande) à la fin du build le shell vous retournera
+      Construire l’image à partir du Dockerfile, faites-vous aider par le corrigé.
+      À la fin du build le shell vous retournera
       --]  “Successfully built [idImage]”
-      Ce qui confirmera que la construction de l’image a réussi
+      ce qui confirmera que la construction de l’image a réussi.
 
     rating: bool
     kind: standard
@@ -299,7 +299,7 @@ sections:
       Connectez-vous en SSH sur le container
       --]  “ssh login@IPContainer -p port” ou “ssh root@IPContainer -p port”
 
-      Le shell pourrait vous demander si vous acceptez la connection sur la dite IP, “yes”
+      Le shell pourrait vous demander si vous acceptez la connexion sur la dite IP, “yes”
 
     rating: bool
     kind: standard
@@ -320,7 +320,7 @@ sections:
   #################################
   - name: Connexion SSH réussie sur le port 42 interne du container
     guidelines: |
-      Dans la configuration du serveur SSH, l port configuré est le port 42
+      Dans la configuration du serveur SSH, le port configuré est le port 42
 
     rating: bool
     kind: standard
@@ -352,16 +352,16 @@ sections:
       en volume dans un container, mais elles ont toutes un point commun : au lancement
       du container, l’option
       --]  “-v répertoirePhysique:répertoireContainer”
-      doit être renseignée au moins une fois lors de la commande docker run
+      doit être renseignée au moins une fois lors de la commande docker run.
       De la même manière, il n’est pas demandé de faire un montage volume de cette sorte
       --]  “--volume”
 
-      Le corrigé vous expliquera comment il a fait
+      Le corrigé vous expliquera comment il a fait.
 
       Pour tester le partage, il suffira de faire un
       --]  “touch filetest”
       dans le répertoire partagé et de faire un “ls” de l’autre côté. testez réciproquement
-      la manipulation pour être sûr que le partage fonctionne bien dans les deux sens
+      la manipulation pour être sûr que le partage fonctionne bien dans les deux sens.
 
     rating: bool
     kind: standard
@@ -392,10 +392,10 @@ sections:
       Pour le rendu des bonus d’environnement complet : Chaque bonus sera nommé bonus01,
       bonus02 . . . . bonus[xx].
 
-      Pour des bonus de Dockerfile s’il y a, le dossier bonus ne doit pas dépasé 500Ko
+      Pour des bonus de Dockerfile s’il y a, le dossier bonus ne doit pas dépasser 500Ko
       --]  "du -hs bonus[x]" pour voir la taille du dossier complet
       Pour chaque Dockerfile bonus le corrigé doit vous en expliquer l’utilité et le
-      gains de temps qui en découle
+      gain de temps qui en découle.
 
     rating: multi
     kind: bonus
