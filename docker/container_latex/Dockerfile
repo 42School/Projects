@@ -22,3 +22,11 @@ RUN apt-get install python-pygmen
 
 # Clean up APT when done.
 RUN apt-get clean ; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+## install RVM && ruby 2.1.2
+RUN /bin/bash -l -c  "command curl -sSL https://rvm.io/mpapis.asc | gpg --import -"
+RUN \curl -sSL https://get.rvm.io | bash -s stable
+RUN /bin/bash -l -c "rvm requirements"
+RUN /bin/bash -l -c "rvm install 2.1.2"
+RUN /bin/bash -l -c "gem install bundler"
+RUN /bin/bash -l -c "rvm use 2.1.2 --default"
