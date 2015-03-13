@@ -31,7 +31,7 @@ guidelines_md: |
   Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
 
   Si le correcteur n'a pas encore fait ce projet, il est obligatoire
-  de lire le sujet en entier avant de commencer cette soutenance.
+  de lire le sujet en entier avant de commencer cette soutenance.|
 
 correction_number: 5
 duration: 2
@@ -109,8 +109,7 @@ sections:
   #################################
   #################################
   - name: Docker est-il installé par l’utilisation de boot2docker ?
-    guidelines: |
-
+    guidelines: ''
     rating: bool
     kind: standard
     questions_skills:
@@ -178,8 +177,7 @@ sections:
   #################################
   #################################
   - name: A utilisé une option spécifique lors du “docker build” pour le nom de l’image
-    guidelines: |
-
+    guidelines: ''
     rating: bool
     kind: standard
     questions_skills:
@@ -198,8 +196,7 @@ sections:
   #################################
   #################################
   - name: Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
-    guidelines: |
-
+    guidelines: ''
     rating: bool
     kind: standard
     questions_skills:
@@ -313,8 +310,7 @@ sections:
   #################################
   #################################
   - name: Connexion SSH réussie sur le port 42 interne du container
-    guidelines: |
-
+    guidelines: ''
     rating: bool
     kind: standard
     questions_skills:
