@@ -70,7 +70,7 @@
 
 %% II.2 - Class options and parent class
 
-\newcommand{\summarytitle}{R\'esum\'e}%
+\newcommand{\summarytitle}{Summary}%
 
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{report}

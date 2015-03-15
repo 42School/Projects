@@ -15,8 +15,6 @@
 
 \documentclass{42}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Prologue
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,6 +22,7 @@
 \begin{document}
 
 %Table des matieres
+
 \title{OpenGL Project}
 \subtitle{HumanGL}
 
@@ -42,9 +41,11 @@
 \turnindir{svn+ssh://rendus@rendus.42.fr/sujetdetest-2142-login\_x}
 
 \newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{Foreword}
 {
 \small
@@ -98,17 +99,18 @@ Ba de ya - golden dreams were shiny days\\
 Ba de ya de ya de ya\\
 Ba de ya de ya de ya\\
 Ba de ya de ya de ya - De ya.... {x2}\\
-
+\\
 This subject won't be easier if you are listening Disco, but that's freakin' cool.\\
 And if you're feeling bad about some difficulties, just think about Travolta.
+
 }
 
 \chapter{The project}
 \section{What you're gonna do}
 
 In this project, you must implement a skeletal animation with a hierarchical model.\\
-Body parts are correctly articulated using the OpenGL matrix stack. If the torso rotate, all the members must follow logically, therefore if the upper arm move only the forearm have to follow. When you modify the size of a member, related parts automatically reposition themself.
-
+Body parts are correctly articulated using the OpenGL matrix stack. If the torso rotate, all the members must follow logically, therefore if the upper arm move only the forearm have to follow. When you modify the size of a member, related parts automatically reposition themself.\\
+\\
 Your model will have the following parts :\\
 \begin{itemize}
 	\item a head
@@ -121,43 +123,50 @@ Your model will have the following parts :\\
 	\item two legs with
 	\begin{itemize}
 		\item thigh
-		\item lower part
+		\item lower part\\
 	\end{itemize}
 \end{itemize}
+{
+\noindent
 And it should be able to walk, jump and stay put.
+}
+\newpage
 
 \section{Constraints}
-
+	The following constraints have to be respected in order to have points.
+\newline
 \subsection{Realisation}
-You should call the same drawing function for each body part and only one time per part.\\
-This function will draw a 1x1x1 geometric shape in the current matrix.
+	Each body part will be drawn by one and only one function call. This function will draw a 1x1x1 geometric shape at the origin of the current matrix.
 
 \info
 {
 	Upper and lower part of the same member are indeed two different parts.
 }
 
+\
 \subsection{Language}
+A makefile or something similar is required. Only what contains your repository will be evaluated.\\
+\\
+\indent You can use the graphic library of your choice (SDL2, Glut, SFML..) but you need to use OpenGL matrices and associated functions.\\
+\\
+\indent You are free to use whatever language you want. If you use C, you have to respect the Norm, as usual.\\
 
-A makefile or something similar is required.
-
-You can use the graphic library of your choice (SDL2, Glut, SFML..) but you need to use OpenGL matrices and associated functions.
-
-You are free to use whatever language you want. If you use C, you have to respect the Norm, as usual.
-
+\newpage
 \section{Bonuses}
 
-When your hierarchical model is completely working, it would be easy to add :
+When your hierarchical model is completely working, it would be easy to add :\\
 \begin{itemize}
-	\item More body parts or a completely different model.
-	\item Other move patterns (Disco dance, Kung-fu fighting, etc etc..)
-	\item A kick-ass interface where you can for example modify body part size.
-	\item Camera gestion.
+	\item More body parts.
+	\item Other move patterns (Disco dance, Kung-fu fighting, etc etc..).
+	\item A kick-ass graphic interface where you can for example modify body part size.
 \end{itemize}
-
+\newline
+Those bonuses will be check in defense session and will have some points only for them.
+Other bonuses will also be counted.\\
+\\
 \section{Defense sessions}
 
-Be prepared to :
+Be prepared to :\\
 \begin{itemize}
 	\item Obviously run the program and show the different move patterns.
 	\item Change member sizes.
@@ -167,73 +176,8 @@ Be prepared to :
 
 \chapter{Illustrations}
 
-% \section{Section premiere}
-
-% \subsection{Sous-section the first}
-
-% \begin{itemize}
-% 	\item Liste
-% 	\item de
-% 	\item trucs
-% 	\begin{itemize}
-% 		\item nested
-% 		\item trop bien
-% 	\end{itemize}
-% 	\item mais j'aime les poneys
-% \end{itemize}
-
-
-% \begin{figure}[ht!]
-%   \centering
-%   \includegraphics[width=90mm]{42.jpg}
-% \end{figure}
-
-
-% \newpage
-
-% \begin{42ccode}
-% /* Awesome code is awesome */
-% int		main(int ac, char** av)
-% {
-% 	my_putstr("J'aime le 101010");
-%         return 0;
-% }
-% \end{42ccode}
-
-% \begin{42console}
-% $>ls
-% Makefile  test.aux  test.log  test.outtest.pdf  test.tex  test.toc
-% $>
-% \end{42console}
-
-
-% \hint
-% {
-% 	Hint box
-% }
-
-% \warn
-% {
-% 	Warn box
-% }
-
-% \info
-% {
-% 	Info box
-% }
-
-% \chapter{Ceci est un exercice}
-
-% \extitle{Ceci est le titre de l'exercice}
-% \exnumber{00}
-% \exscore{42}
-% \exfiles{tamere.h,tamere.c}
-
-% \makeheaderbasic
-
-% Ceci est le sujet de l'exercice.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \end{document}
