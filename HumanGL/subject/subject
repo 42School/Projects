@@ -1,0 +1,91 @@
+Préambule :
+
+Do you remember the 21st night of September?
+Love was changing the mind of pretenders
+While chasing the clouds away
+
+Our hearts were ringing
+In the key that our souls were singing.
+As we danced in the night,
+Remember - how the stars stole the night away, yeah yeah yeah.
+
+Hey hey hey,
+Ba de ya - say do you remember
+Ba de ya - dancing in September
+Ba de ya - never was a cloudy day
+
+Ba duda, ba duda, ba duda, badu
+Ba duda, badu, ba duda, badu
+Ba duda, badu, ba duda
+
+My thoughts are with you
+Holding hands with your heart to see you
+Only blue talk and love,
+Remember - how we knew love was here to stay
+
+Now December found the love that we shared in September.
+Only blue talk and love,
+Remember - the true love we share today
+Hey hey hey
+Ba de ya - say do you remember
+Ba de ya - dancing in September
+Ba de ya - never was a cloudy day....there was a
+Ba de ya - say do you remember
+Ba de ya - dancing in September
+Ba de ya - golden dreams were shiny days
+
+Now our bell was ringing, aha
+Our souls were singing.
+Do you remember every cloudy day - yau !
+
+There was a
+Ba de ya - say do you remember
+Ba de ya - dancing in September
+Ba de ya - never was a cloudy day....there was a
+Ba de ya - say do you remember
+Ba de ya - dancing in September
+Ba de ya - golden dreams were shiny days
+
+Ba de ya de ya de ya
+Ba de ya de ya de ya
+Ba de ya de ya de ya - De ya.... {x2}
+
+This subject won't be easier if you are listening Disco, but that's freakin' cool. And if you're feeling bad about some difficulties, just think about Travolta.
+
+What you're gonna do :
+
+In this project, you must implement a skeletal animation with a hierarchical model. Body parts are correctly articulated using the OpenGL matrix stack. If the torso rotate, all the members must follow logically, therefore if the upper arm move only the forearm have to follow. When you modify the size of a member, related parts automatically reposition themself.
+
+Your model will have the following parts : a torso, a head, two arm with upper arm and foreram and two legs with thigh and lower part. It should be able to walk, jump and stay put.
+
+Constraints :
+
+You should call the same drawing function for each body part and only one time per part. This function will draw a 1x1x1 geometric shape in the current matrix.
+
+Hint : upper and lower part of the same member are indeed two different part.
+
+You can use the graphic library of your choice (SDL2, Glut, SFML..) but, you need to use OpenGL  matrices manipulation functions.
+
+Language constraints :
+
+You are free to use whatever language you want. If you use C, you have to respect the Norm, as usual.
+
+
+Bonuses :
+
+When your hierarchical model is completly working, it would be easy to add :
+More body parts or a completely different model.
+
+Other move pattern (Disco dance, Kung-fu fighting, etc etc..)
+
+A kick-ass interface where you can for example modify body part size.
+
+Camera gestion.
+
+Defense sessions :
+
+Be prepared to :
+- Obviously run the program and show the different move pattern.
+- Change member sizes
+- Show your drawing function, his calls and explain how it works.
+- Explain your hierarchical model and the resulting matrix stack.
