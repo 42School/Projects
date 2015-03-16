@@ -13,7 +13,7 @@ introduction_md: |
     groupe) les dysfonctionnements éventuels.
   - D'accepter qu'il puisse y avoir parfois des différences
     d’interprétation sur les demandes du sujet ou l’étendue des
-    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    fonctionnalités. Restez ouvert d'esprit face à la vision de
     l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
     possible.
   Bonne soutenance à tous !
@@ -42,11 +42,11 @@ sections:
     guidelines: |
       Vérifiez d'abord les éléments suivants :
       - Il y a bien un rendu (dans le dépôt git)
-      - Pas de triche, l'étudiants doivent pouvoir expliquer
+      - Pas de triche, l'étudiant doit pouvoir expliquer
         son code.
-      - Si une norme est disponible pour le langage utilisé, elle doit etre respectée.
-    Si un élément de cette liste n'est pas respecte, la notation
-      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      - Si une norme est disponible pour le langage utilisé, elle doit être respectée.
+    Si un élément de cette liste n'est pas respecté, la notation
+      s'arrête la. Utilisez le flag approprié. Vous êtes encouragés à
       continuer de débattre du projet, mais le barème n'est pas
       appliqué.
     rating: bool
@@ -57,7 +57,7 @@ sections:
 
 
 - name: Vérification basique
-  description: 'Il s'agit ici de vérifier le fonctionnement basique du programme ainsi que le respect des contraintes'
+  description: 'Il s''agit ici de vérifier le fonctionnement basique du programme'
 
 
   questions:
@@ -65,7 +65,7 @@ sections:
 
   - name: Affichage
     guidelines: |
-        Lancez le programme avec argument ou non selon le choix de l'étudiant. Ca affiche quelque chose qui ressemble au sujet ?
+        Lancez le programme avec argument ou non selon le choix de l'étudiant. Ça affiche quelque chose qui ressemble au sujet ?
     rating: bool
     kind: standard
     questions_skills:
@@ -76,7 +76,7 @@ sections:
 
   - name: Animation 
     guidelines: |
-        Maintenant que vous vous etes assuré qu'on a bien un affichage, vérifiez la présence des animations démandé.
+        Maintenant que vous vous êtes assuré qu'on a bien un affichage, vérifiez la présence des animations demandées.
     rating: bool
     kind: standard
     questions_skills:
@@ -87,16 +87,16 @@ sections:
 
   - name: Repositionnement des membres
     guidelines: |
-        Demandé a l'étudiant corrigé de changer la taille du torse, compilé et lancé le programme, c'est toujours tout attaché ou on a perdu des bouts ? De meme pour un avant-bras. 
+        Demandez a l'étudiant de changer la taille du torse, compilez et lancez le programme, c'est toujours tout attaché ou on a perdu des bouts ? De même pour un avant-bras. 
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 25
       name: <Adaptation & Creativity>
 
-  - name: Modele hierarchique
+  - name: Modele hiérarchique
     guidelines: |
-        Si lors du test précédent tout c'est bien passé, demandé au corrigé de vous expliquer sa modélisation hierarchique, ses choix et les conséquences. Si le test précédent n'est pas passé, ne mettez pas les points.
+        Si lors du test précédent tout s'est bien passé, demandez à l'étudiant de vous expliquer sa modélisation hiérarchique, ses choix et leurs conséquences. Si le test précédent n'est pas passé, ne mettez pas les points.
     rating: bool
     kind: standard
     questions_skills:
@@ -105,12 +105,13 @@ sections:
 
 
 - name: Les contraintes
+ description: 'Vérification du respect des contraintes imposées'
 
   questions:
 
   - name: Matrices OpenGL
     guidelines : |
-        L'étudiant a-t-il utilisé des matrices OpenGL et les fonctions liés ? Vérifiez la présence de glScale, glRotate, glTranslate ainsi que glPushMatrix et glPopMatrix .
+        L'étudiant a-t-il utilisé les matrices OpenGL et leurs fonctions ? Vérifiez la présence de glScale, glRotate, glTranslate ainsi que glPushMatrix et glPopMatrix.
     rating: bool
     kind: standard
     questions_skills:
@@ -121,7 +122,7 @@ sections:
 
   - name: Les fonctions de dessin
     guidelines : |
-        Demandez au corrigé de vous montrer ses fonctions de dessins, respectent-elles ses conditions : une forme géométrique de 1x1x1, a l'origine de la matrice courante et appellé une seule fois par membre.
+        Demandez à l'étudiant de vous montrer ses fonctions de dessins, respectent-elles ces conditions : une forme géométrique de 1x1x1, a l'origine de la matrice courante et appelé une seule fois par membre ?
     rating: bool
     kind: standard
     questions_skills:
@@ -130,35 +131,54 @@ sections:
     - percentage: 30
       name: <Adaptation & Creativity>
 
- 
-- name: Trop marrant !
-  description: ''
-
-
+- name: Bonus
+ description: 'Vérification de la partie bonus'
   questions:
 
 
-  - name: Premier bonus
+  - name: Parties supplémentaires
     guidelines: |
-      Description...
-    rating: bool
-    kind: bonus
-    questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
-
-
-  - name: Deuxieme bonus
-    guidelines: |
-      Idem.
+        Y-a-t'il des parties supplémentaires sur le modèle ? Bien rendu ?
     rating: multi
     kind: bonus
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 2
+      name: <Graphics>
+    - percentage: 2
+      name: <Adaptation & Creativity>
+
+
+  - name: D'autres animations
+    guidelines: |
+        D'autres façons de bouger sont-elles présentes ? Bien implémentées ?
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 3
+      name: <Graphics>
+    - percentage: 3
+      name: <Adaptation & Creativity>
+
+  - name: Interfaces
+    guidelines: |
+        Y-a-t-il une interface "jolie" et utile ? Les points dépendent de sa beauté relative et des fonctionnalités disponibles.
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 5
+      name: <Graphics>
+    - percentage: 5
+      name: <Adaptation & Creativity>
+
+  - name: Bonus libre
+    guidelines: |
+        D'autres choses ? D'autres modèles ? Des bonus cool ?
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 15
+      name: <Graphics>
+    - percentage: 15
+      name: <Adaptation & Creativity>
+
+
