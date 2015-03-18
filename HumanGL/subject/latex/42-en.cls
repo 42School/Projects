@@ -153,6 +153,7 @@
   colorlinks,
 %  citecolor=black,                %
 %  filecolor=black,                %
+		linktoc=all,																				%	toc link in full line
   linkcolor=black,                % black links
   urlcolor=blue                   % blue URLs
 }

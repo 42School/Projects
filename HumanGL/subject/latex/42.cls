@@ -70,7 +70,7 @@
 
 %% II.2 - Class options and parent class
 
-\newcommand{\summarytitle}{Summary}%
+\newcommand{\summarytitle}{R\'esum\'e}%
 
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{report}
@@ -153,6 +153,7 @@
   colorlinks,
 %  citecolor=black,                %
 %  filecolor=black,                %
+  linktoc=all,																				% toc link in full line
   linkcolor=black,                % black links
   urlcolor=blue                   % blue URLs
 }

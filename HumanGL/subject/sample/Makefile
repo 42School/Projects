@@ -1,8 +1,8 @@
 # List the pdf's to build. foo.tex will produce foo.pdf
-TARGETS = test.pdf
+TARGETS = humangl.pdf
 
 # List the files included in the slides
-DEPS = 
+DEPS = humangl-walking.png
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
