@@ -57,7 +57,7 @@ sections:
     - percentage: 0
       name: Rigor
     - percentage: 0
-      name: Imperative programming
+      name: Algorithms & AI
 
 
 - name: Premiere section
@@ -79,7 +79,7 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Format de l équation réduite
     guidelines: |
@@ -93,7 +93,7 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Gestion de l entrée
     guidelines: |
@@ -110,7 +110,7 @@ sections:
     - percentage: 5
       name: Rigor
     - percentage: 5
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 0
     guidelines: |
@@ -125,7 +125,7 @@ sections:
     - percentage: 5
       name: Rigor
     - percentage: 5
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 1
     guidelines: |
@@ -139,7 +139,7 @@ sections:
     - percentage: 10
       name: Rigor
     - percentage: 10
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 2 - Discriminant strictement positif
     guidelines: |
@@ -155,7 +155,7 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 2 - Discriminant nul
     guidelines: |
@@ -171,7 +171,7 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 2 - Discriminant strictement négatif
     guidelines: |
@@ -184,7 +184,7 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
 
   - name: Equations de degré 3 ou plus
     guidelines: |
@@ -199,7 +199,7 @@ sections:
     - percentage: 5
       name: Rigor
     - percentage: 5
-      name: Imperative programming
+      name: Algorithms & AI
 
 - name: Bonus
   description: 'Partie Bonus'
@@ -221,7 +221,7 @@ sections:
     - percentage: 10
       name: Rigor
     - percentage: 10
-      name: Imperative programming
+      name: Algorithms & AI
 
 
   - name: Deuxieme bonus
@@ -236,4 +236,4 @@ sections:
     - percentage: 15
       name: Rigor
     - percentage: 15
-      name: Imperative programming
+      name: Algorithms & AI
