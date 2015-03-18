@@ -13,7 +13,7 @@ introduction_md: |
     groupe) les dysfonctionnements éventuels.
   - D'accepter qu'il puisse y avoir parfois des différences
     d’interprétation sur les demandes du sujet ou l’étendue des
-    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    fonctionnalités. Restez ouvert d'esprit face à la vision de
     l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
     possible.
   Bonne soutenance à tous !
@@ -42,11 +42,11 @@ sections:
     guidelines: |
       Vérifiez d'abord les éléments suivants :
       - Il y a bien un rendu (dans le dépôt git)
-      - Pas de triche, l'étudiants doivent pouvoir expliquer
+      - Pas de triche, l'étudiant doit pouvoir expliquer
         son code.
-      - Si une norme est disponible pour le langage utilisé, elle doit etre respectée.
-    Si un élément de cette liste n'est pas respecte, la notation
-      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      - Si une norme est disponible pour le langage utilisé, elle doit être respectée.
+    Si un élément de cette liste n'est pas respecté, la notation
+      s'arrête la. Utilisez le flag approprié. Vous êtes encouragés à
       continuer de débattre du projet, mais le barème n'est pas
       appliqué.
     rating: bool
@@ -122,7 +122,7 @@ sections:
 
   - name: Les fonctions de dessin
     guidelines : |
-        Demandez à l'étudiant de vous montrer ses fonctions de dessins, respectent-elles ces conditions : une forme géométrique de 1x1x1, a l'origine de la matrice courante et appellé une seule fois par membre ?
+        Demandez à l'étudiant de vous montrer ses fonctions de dessins, respectent-elles ces conditions : une forme géométrique de 1x1x1, a l'origine de la matrice courante et appelé une seule fois par membre ?
     rating: bool
     kind: standard
     questions_skills:
@@ -138,7 +138,7 @@ sections:
 
   - name: Parties supplémentaires
     guidelines: |
-        Y-a-t'il des parties supplémentaires sur le modele ? Bien rendu ?
+        Y-a-t'il des parties supplémentaires sur le modèle ? Bien rendu ?
     rating: multi
     kind: bonus
     questions_skills:
@@ -150,7 +150,7 @@ sections:
 
   - name: D'autres animations
     guidelines: |
-        D'autres facons de bouger sont-elles présentes ? Bien implémentées ?
+        D'autres façons de bouger sont-elles présentes ? Bien implémentées ?
     rating: multi
     kind: bonus
     questions_skills:
@@ -161,7 +161,7 @@ sections:
 
   - name: Interfaces
     guidelines: |
-        Y-a-t-il une interface "jolie" et qui fait des trucs ? Les points dépendent de sa beauté relative et des fonctionnalités disponibles.
+        Y-a-t-il une interface "jolie" et utile ? Les points dépendent de sa beauté relative et des fonctionnalités disponibles.
     rating: multi
     kind: bonus
     questions_skills:
@@ -172,7 +172,7 @@ sections:
 
   - name: Bonus libre
     guidelines: |
-        D'autres choses ? D'autres modeles ? Des bonus cool ?
+        D'autres choses ? D'autres modèles ? Des bonus cool ?
     rating: multi
     kind: bonus
     questions_skills:
