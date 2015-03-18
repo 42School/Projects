@@ -44,18 +44,20 @@ sections:
       - Il y a bien un rendu (dans le dépôt git)
       - Pas de triche, l'étudiant doit pouvoir expliquer
         son code.
-      - Si le programme est écrit dans un langage compilable, il y a bien un Makefile avec au moins les règles all, re, et clean.
-      Si un élément de cette liste n'est pas respecté, la notation
+      - Si le programme est écrit dans un langage compilable, il y a
+      bien un Makefile avec au moins les règles all, re, et clean.  Si
+      un élément de cette liste n'est pas respecté, la notation
       s'arrête la. Utilisez le flag approprié. Vous êtes encouragés à
       continuer de débattre du projet, mais le barème n'est pas
       appliqué.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 0
-      name: <Rigor>
+      name: Rigor
     - percentage: 0
-      name: <Imperative programming>
+      name: Imperative programming
 
 
 - name: Premiere section
@@ -65,91 +67,111 @@ sections:
   questions:
 
 
-  - name: Présence de l'équation réduite
+  - name: Présence de l équation réduite
     guidelines: |
-      Le programme prend en paramètre ou attend sur l'entrée standard une équation et affiche ensuite la même équation sous forme réduite ?
-      Est-ce la bonne ?
+      Le programme prend en paramètre ou attend sur l'entrée standard
+      une équation et affiche ensuite la même équation sous forme
+      réduite ?  Est-ce la bonne ?
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming
 
-  - name: Format de l'équation réduite
+  - name: Format de l équation réduite
     guidelines: |
-       Dans l'équation réduite, les puissances sont affichées jusqu'à la dernière non nulle, une seule fois, et l'un des deux cotés de l'équation est nul?
+       Dans l'équation réduite, les puissances sont affichées jusqu'à
+       la dernière non nulle, une seule fois, et l'un des deux cotés
+       de l'équation est nul ?
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming
 
-  - name: Gestion de l'entrée
+  - name: Gestion de l entrée
     guidelines: |
-      Essayez plusieurs entrées bien formatées mais potentiellement mal gérées (des coefficients nuls, négatifs, pas entiers ...).
-      Le programme les gère bien ? (pas de crash, pas d'erreurs de calcul, pas de boucle infinie ...)
-      NB: si vous avez répondu non à l'une de ces trois question, la correction s'arrete là.
+      Essayez plusieurs entrées bien formatées mais potentiellement
+      mal gérées (des coefficients nuls, négatifs, pas entiers ...).
+      Le programme les gère bien ? (pas de crash, pas d'erreurs de
+      calcul, pas de boucle infinie ...).
+      IMPORTANT: si vous avez répondu non à l'une de ces trois
+      question, la soutenance s'arrete là.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 5
-      name: <Rigor>
+      name: Rigor
     - percentage: 5
-      name: <Imperative programming>
+      name: Imperative programming
 
   - name: Equations de degré 0
     guidelines: |
-      Entrez une équation possible (par exemple, "5 * X^0 = 5 * X^0"). Le programme vous dit-il que tous les nombres réels sont solution?
-      Entrez une équation impossible (par exemple, "4 * X^0 = 8 * X^0"). Le programme vous dit-il qu'il n'y a pas de solutions?
+      Entrez une équation possible (par exemple, "5 * X^0 = 5 * X^0").
+      Le programme vous dit-il que tous les nombres réels sont solution?
+      Entrez une équation impossible (par exemple, "4 * X^0 = 8 *
+      X^0"). Le programme vous dit-il qu'il n'y a pas de solutions?
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 5
-      name: <Rigor> 
+      name: Rigor
     - percentage: 5
-      name: <Imperative programming>
+      name: Imperative programming
 
   - name: Equations de degré 1
     guidelines: |
-      Entrez une équation de degré 1 (par exemple: "5 * X^0 = 4 * X^0 + 7 * X^1"). 
-      Le programme vous affiche-t-il la solution de l'équation? Faites plusieurs essais.
+      Entrez une équation de degré 1 (par exemple: "5 * X^0 = 4 * X^0 + 7 * X^1").
+      Le programme vous affiche-t-il la solution de
+      l'équation ? Faites plusieurs essais.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 10
-      name: <Rigor> 
+      name: Rigor
     - percentage: 10
-      name: <Imperative programming>
+      name: Imperative programming
 
   - name: Equations de degré 2 - Discriminant strictement positif
     guidelines: |
-      Entrez une équation de degré deux avec un discriminant strictement positif (par exemple: "5 * X^0 + 13 * X^1 + 3 * X^2 = 1 * X^0 + 1 * X^1").
-      Le programme vous affiche bien qu'elle a un discriminant strictement positif ?
-      Le programme vous affiche bien deux solutions? Ce sont les bonnes ? Faites plusieurs essais.
+      Entrez une équation de degré deux avec un discriminant
+      strictement positif (par exemple: "5 * X^0 + 13 * X^1 + 3 * X^2 = 1 * X^0 + 1 * X^1").
+      Le programme vous affiche bien qu'elle a un discriminant
+      strictement positif ?  Le programme vous affiche bien deux
+      solutions? Ce sont les bonnes ? Faites plusieurs essais.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming
 
   - name: Equations de degré 2 - Discriminant nul
     guidelines: |
-      Entrez une équation de degré deux avec un discriminant égal à 0 (par exemple: "6 * X^0 + 11 * X^1 + 5 * X^2 = 1 * X^0 + 1 * X^1").
+      Entrez une équation de degré deux avec un discriminant égal à 0
+      (par exemple: "6 * X^0 + 11 * X^1 + 5 * X^2 = 1 * X^0 + 1 * X^1").
       Le programme vous affiche bien qu'elle a un discriminant nul ?
-      Le programme vous affiche bien une unique solution? C'est la bonne ? Faites plusieurs essais.
+      Le programme vous affiche bien une unique solution? C'est la
+      bonne ? Faites plusieurs essais.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming
 
   - name: Equations de degré 2 - Discriminant strictement négatif
     guidelines: |
@@ -160,27 +182,31 @@ sections:
     kind: standard
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming
 
-  - name: Equations de degré 3
+  - name: Equations de degré 3 ou plus
     guidelines: |
-      Entrez une équation de degré trois. Le programme vous envoie chier ? C'est normal, méchants.
+      Entrez une équation de degré trois ou plus . Le programme doit
+      refuser de resoudre l equation. Bon apres, si le programme la
+      resoud, mettez-les points quand meme et faites un petit sifflement
+      d admiration, mais en tous cas, le programme ne doit pas planter.
+
     rating: bool
     kind: standard
     questions_skills:
     - percentage: 5
-      name: <Rigor>
+      name: Rigor
     - percentage: 5
-      name: <Imperative programming>
+      name: Imperative programming
 
 - name: Bonus
   description: 'Partie Bonus'
 
   questions:
 
-  - name: Gestion de l'entrée sous forme naturelle
+  - name: Gestion de l entrée sous forme naturelle
     guidelines: |
       Le programme est capable de gérer une entrée sous forme naturelle ?
         * Un coefficient seul ("4") est considéré comme étant en facteur de X^0.
@@ -188,25 +214,26 @@ sections:
         * Une puissance absente ("4 * X") est considérée comme valant 1.
         * Un coefficient absent ("X^6") est considéré comme valant 1.
         * Les puissances peuvent être dans un ordre arbitraire, éventuellement répétées.
+
     rating: bool
     kind: bonus
     questions_skills:
     - percentage: 10
-      name: <Rigor>
+      name: Rigor
     - percentage: 10
-      name: <Imperative programming>
+      name: Imperative programming
 
 
   - name: Deuxieme bonus
     guidelines: |
-      Gestion des erreurs sur l'entrée.
+      Gestion des erreurs sur l'entrée (lexique et syntaxe).
       Affichage des résultats sous forme de fraction irréductible quand c'est pertinent.
-      Afficher des étapes intermédiaires
+      Afficher des étapes intermédiaires.
       Etc...
     rating: multi
     kind: bonus
     questions_skills:
     - percentage: 15
-      name: <Rigor>
+      name: Rigor
     - percentage: 15
-      name: <Imperative programming>
+      name: Imperative programming

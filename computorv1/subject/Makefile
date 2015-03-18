@@ -6,7 +6,7 @@ DEPS =
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
-RELPATH = ../templates/latex/
+RELPATH = ../../templates/latex/
 
 # You should not touch this either
 include $(RELPATH)/Makefile.LaTeX

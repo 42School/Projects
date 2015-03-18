@@ -168,9 +168,16 @@ Reduced form: 5 * X^0 - 6 * X^1 + 0 * X^2 - 5.6 * X^3 = 0
 Polynomial degree: 3
 The polynomial degree is stricly greater than 2, I can't solve.\end{42console}
 
-    On considèrera toujours que l'entrée est bien formatée (ie. tous
-    les termes sont de la forme $a * x^p$. Les puissances sont bien ordonnées et toutes
-    présentes.
+    On considèrera toujours que l'entrée est bien formatée, ie. tous
+    les termes sont de la forme $a * x^p$. Les puissances sont bien
+    ordonnées et toutes présentes. Attention, cela ne signifie pas
+    forcement que l'\'equation soit solvable ! Dans ce cas, votre
+    programme doit le d\'etecter et l'indiquer. Pensez aussi aux
+    coefficients nuls, négatifs, pas entiers ...\\
+
+    Il existe peut-\^etre des cas particuliers que vous devez
+    g\'erer. Par exemple pour l'\'equation $42 * X^0 = 42 * X^0$, tous
+    les nombres r\'eels sont solution...\\
 
     \info {
 	  La résolution des équations de degré trois ou plus n'est pas
