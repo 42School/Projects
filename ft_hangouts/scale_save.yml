@@ -1,5 +1,5 @@
 ---
-name: Serge
+name: ft_hangouts
 is_primary: true
 comment: ''
 introduction_md: |
@@ -49,13 +49,15 @@ sections:
       name: Rigor
     - percentage: 0
       name: Technology integration
+    position: 1
+  position: 1
 - name: Premiere section
   description: Partie Obligatoire
   questions:
   - name: Création
     guidelines: |
-      "Vérifiez qu'on puisse bien créer un contact et qu'il apparait ensuite sur la page d'accueil de l'application sous forme de liste avec un résumer.
-      Si on clic sur ce contact les informations complètes sont affichées. Les contacts créés sont persistants et son enregistré dans une base de données local."
+      "Vérifiez qu'on puisse bien créer un contact et qu'il apparaisse ensuite sur la page d'accueil de l'application sous forme de liste avec un résumé.
+      Si on clic sur ce contact, les informations complètes sont affichées. Les contacts créés sont persistants et sont enregistrés dans une base de données locale."
     rating: bool
     kind: standard
     questions_skills:
@@ -63,6 +65,7 @@ sections:
       name: DB & Data
     - percentage: 35
       name: Object-oriented programming
+    position: 1
   - name: Edition
     guidelines: |
       "Vérifiez qu'on puisse bien éditer un contact."
@@ -73,6 +76,7 @@ sections:
       name: DB & Data
     - percentage: 20
       name: Object-oriented programming
+    position: 2
   - name: Suppression
     guidelines: |
       "Vérifiez qu'on puisse bien supprimer un contact."
@@ -83,10 +87,11 @@ sections:
       name: DB & Data
     - percentage: 10
       name: Object-oriented programming
+    position: 3
   - name: SMS
     guidelines: |
-      "Vous devez vérifiez qu'on puisse bien dialoguer avec un contact par SMS.
-      On a bien un historique de la conversation claire, on distingue qui est le destinataire de celui qui a envoyé."
+      "Vous devez vérifier qu'on puisse bien dialoguer avec un contact par SMS.
+      On a bien un historique de la conversation claire, on distingue le destinataire de l'expéditeur"
     rating: bool
     kind: standard
     questions_skills:
@@ -96,9 +101,10 @@ sections:
       name: Object-oriented programming
     - percentage: 30
       name: Technology integration
+    position: 4
   - name: Langues
     guidelines: |
-      "Deux langues sont disponibles dont une par défaut. Pour tester changer la langue du système."
+      "Deux langues sont disponibles, dont une par défaut. Pour tester, changez la langue du système."
     rating: bool
     kind: standard
     questions_skills:
@@ -106,6 +112,7 @@ sections:
       name: Rigor
     - percentage: 30
       name: Technology integration
+    position: 5
   - name: Mise en arriere plan
     guidelines: |
       "Lorsque vous mettez l'application en arrière plan et que vous revenez au premier plan, l'heure de la mise en arrière plan doit s'afficher."
@@ -116,6 +123,7 @@ sections:
       name: Rigor
     - percentage: 10
       name: Technology integration
+    position: 6
   - name: Options
     guidelines: |
       "Un menu avec une option permet de changer la couleur du header."
@@ -126,6 +134,7 @@ sections:
       name: Technology integration
     - percentage: 25
       name: Rigor
+    position: 7
   - name: Graphique
     guidelines: |
       "L'application possède le logo de 42 en tant qu'icone.
@@ -135,6 +144,8 @@ sections:
     questions_skills:
     - percentage: 20
       name: Rigor
+    position: 8
+  position: 2
 - name: Bonus
   description: Partie Bonus
   questions:
@@ -146,6 +157,7 @@ sections:
     questions_skills:
     - percentage: 7
       name: Object-oriented programming
+    position: 1
   - name: Call me maybe
     guidelines: |
       "Il est possible d'appeler un contact."
@@ -154,14 +166,16 @@ sections:
     questions_skills:
     - percentage: 7
       name: Object-oriented programming
+    position: 2
   - name: Design
     guidelines: |
-      "C'est beau, la beaute est subjective, mais si l'application n'est pas toute blanche et basique c'est déjà pas mal."
+      "C'est beau. La beautée est subjective, mais si l'application n'est pas toute blanche et basique c'est déjà pas mal."
     rating: bool
     kind: bonus
     questions_skills:
     - percentage: 6
       name: Object-oriented programming
+    position: 3
   - name: Bonus libre.
     guidelines: |
       "Tout ce qui vous semble notable en tant que bonus."
@@ -170,3 +184,5 @@ sections:
     questions_skills:
     - percentage: 5
       name: Object-oriented programming
+    position: 4
+  position: 3
