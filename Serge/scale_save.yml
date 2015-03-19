@@ -1,0 +1,172 @@
+---
+name: Serge
+is_primary: true
+comment: ''
+introduction_md: |
+  "Nous vous demandons, pour le bon déroulement de cette notation :
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+  Bonne soutenance à tous !"
+disclaimer_md: ''
+guidelines_md: |
+  "RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance."
+correction_number: 5
+duration: 2
+sections:
+- name: Préliminaires
+  description: ''
+  questions:
+  - name: Consignes préliminaires
+    guidelines: |
+      "Vérifiez d'abord les éléments suivants :
+      - Il y a bien un rendu (dans le dépôt git)
+      - Pas de triche, les deux étudiants doivent pouvoir expliquer
+        leur code.
+      - Le projet est bien en JAVA
+      Si un élément de cette liste n'est pas respecte, la notation
+      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      continuer de débattre du projet, mais le barème n'est pas
+      appliqué."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Object-oriented programming
+    - percentage: 0
+      name: DB & Data
+    - percentage: 0
+      name: Rigor
+    - percentage: 0
+      name: Technology integration
+- name: Premiere section
+  description: Partie Obligatoire
+  questions:
+  - name: Création
+    guidelines: |
+      "Vérifiez qu'on puisse bien créer un contact et qu'il apparait ensuite sur la page d'accueil de l'application sous forme de liste avec un résumer.
+      Si on clic sur ce contact les informations complètes sont affichées. Les contacts créés sont persistants et son enregistré dans une base de données local."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: DB & Data
+    - percentage: 35
+      name: Object-oriented programming
+  - name: Edition
+    guidelines: |
+      "Vérifiez qu'on puisse bien éditer un contact."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: DB & Data
+    - percentage: 20
+      name: Object-oriented programming
+  - name: Suppression
+    guidelines: |
+      "Vérifiez qu'on puisse bien supprimer un contact."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: DB & Data
+    - percentage: 10
+      name: Object-oriented programming
+  - name: SMS
+    guidelines: |
+      "Vous devez vérifiez qu'on puisse bien dialoguer avec un contact par SMS.
+      On a bien un historique de la conversation claire, on distingue qui est le destinataire de celui qui a envoyé."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 40
+      name: DB & Data
+    - percentage: 35
+      name: Object-oriented programming
+    - percentage: 30
+      name: Technology integration
+  - name: Langues
+    guidelines: |
+      "Deux langues sont disponibles dont une par défaut. Pour tester changer la langue du système."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Rigor
+    - percentage: 30
+      name: Technology integration
+  - name: Mise en arriere plan
+    guidelines: |
+      "Lorsque vous mettez l'application en arrière plan et que vous revenez au premier plan, l'heure de la mise en arrière plan doit s'afficher."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 25
+      name: Rigor
+    - percentage: 10
+      name: Technology integration
+  - name: Options
+    guidelines: |
+      "Un menu avec une option permet de changer la couleur du header."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Technology integration
+    - percentage: 25
+      name: Rigor
+  - name: Graphique
+    guidelines: |
+      "L'application possède le logo de 42 en tant qu'icone.
+       Elle fonctionne également en portrait et en paysage."
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Rigor
+- name: Bonus
+  description: Partie Bonus
+  questions:
+  - name: Photo
+    guidelines: |
+      "On peut ajouter une photo dans la description des contacts."
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: 7
+      name: Object-oriented programming
+  - name: Call me maybe
+    guidelines: |
+      "Il est possible d'appeler un contact."
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: 7
+      name: Object-oriented programming
+  - name: Design
+    guidelines: |
+      "C'est beau, la beaute est subjective, mais si l'application n'est pas toute blanche et basique c'est déjà pas mal."
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: 6
+      name: Object-oriented programming
+  - name: Bonus libre.
+    guidelines: |
+      "Tout ce qui vous semble notable en tant que bonus."
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 5
+      name: Object-oriented programming
