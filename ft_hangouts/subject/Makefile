@@ -1,12 +1,12 @@
 # List the pdf's to build. foo.tex will produce foo.pdf
-TARGETS = ft_hangouts.pdf
+TARGETS = ft_hangouts.fr.pdf
 
 # List the files included in the slides
 DEPS = 
 
 # Relative path to the LaTeX documentclass setup files
 # Adapt as needed
-RELPATH = ../templates/latex/
+RELPATH = ../../templates/latex/
 
 # You should not touch this either
 include $(RELPATH)/Makefile.LaTeX
