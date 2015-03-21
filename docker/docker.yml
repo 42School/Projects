@@ -57,6 +57,9 @@ sections:
       sur la machine en local. S'il y a une seule mission d'effectuée sur une machine à distance,
       la correction s'arrête. Rendu invalide.
 
+      - Tout les build d'images commence a partir d'une image officielle Linux disponible sur docker Hub
+      FROM: ubuntu:14.04 (Dockerfile) par exemple (non pas un variante qui est déjà pré-construite)
+
       Si un élément de cette liste n'est pas respecté, la notation
       s'arrête là. Utilisez le flag approprié. Vous êtes encouragés à
       continuer de débattre du projet, mais le barème n'est pas
