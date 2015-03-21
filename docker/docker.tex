@@ -23,8 +23,8 @@
 \title{Docker On Mac}
 \subtitle{Sur Linux c'est trop simple}
 
-\member {42 staff}{staff@42.fr}
 \member {Jean-Jacques MOIROUX}{jmoiroux@student.42.fr}
+\member {42 staff}{staff@42.fr}
 
 \summary
 {
@@ -78,7 +78,7 @@ Le terme aconier, parfois écrit acconier (ou l'anglicisme stevedore), recouvre 
 	\item Les containers lors de la soutenance seront hébergés sur votre machine en local.
 	\item Interdiction de faire une soutenance avec un container sur une machine distante, relire la règle juste au-dessus au cas où vous n’auriez pas compris cette règle-ci.
 	\item Il est fortement conseillé pour chaque mission de fournir un script .sh pour lancer le container, le correcteur POURRA vérifier ce script de lancement.
-	\item Vous pouvez utiliser Ubuntu, Debian ou autres du moment que l'arborescence de répertoire suivante est respectée : ''/home/login'' (/home/user). Vous trouverez des images officielles sur Docker Hub.
+	\item Vous pouvez utiliser Ubuntu, Debian, fedora, CentOS, ArchLinux ou autres du moment que l'arborescence de répertoire suivante est respectée : ''/home/login'' (/home/user). Vous trouverez des images officielles sur Docker Hub.
 \end{itemize}
 
 	\newpage
@@ -86,10 +86,7 @@ Le terme aconier, parfois écrit acconier (ou l'anglicisme stevedore), recouvre 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 1 Mission 0 - Installer Docker sur Mac
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 0}
-\begin{center}
-	{\Huge Installer Docker sur Mac}
-\end{center}
+\section{Mission 0 - Installer Docker sur Mac}
 
 Rendre vos fichiers pour soutenance dans mission00 (s’il y en a)
 \newline
@@ -129,12 +126,9 @@ $>
 	\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapitre 2 Mission 1 - "Hello Wolrd"
+% Chapitre 2 Mission 1 - "Hello World"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 1}
-\begin{center}
-	{\Huge ''Hello Wolrd''}
-\end{center}
+\section{Mission 1 - Hello World}
 
 Rendre vos fichiers pour soutenance dans mission01: le script du lancement du container (non obligatoire).
 \newline
@@ -146,20 +140,24 @@ IPContainer:xxxx ou localhost:xxxx #(si vous trouvez comment faire)
 où [xxxx] est le port fourni par Docker pour accéder au container hébergeant le serveur web.
 \newline
 \newline
-À la soutenance, le correcteur lancera le container ''hello/wolrd:v42'' ( [REPOSITORY]:[TAG] ) en mode interactif. Le prompt du container devra afficher
+À la soutenance, le correcteur lancera le container ''hello/world:v42'' ([REPOSITORY]:[TAG]) en mode interactif. Le prompt du container devra afficher
 \begin{42console}
 login@42born2code:/#
 \end{42console}
-
+\warn
+{
+\textbf{Attention:}
+\newline
+Ne pas utiliser d'image pré-construite qui fait le Hello World tout en un.
+\newline
+Il faut bien entendu utiliser une image officielles Linux, vous avez le choix de la distribution
+}
 	\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2 Mission 2 - SSH Localhost
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 2}
-\begin{center}
-	{\Huge SSH Localhost}
-\end{center}
+\section{Mission 2 - OpenSSH}
 
 Rendre vos fichiers pour soutenance dans mission02: le Dockerfile et les fichiers ajoutés à l’exécution du build de l’image (autant que besoin pour l’accomplissement de la mission).
 \newline
@@ -184,23 +182,9 @@ ssh login@localhost -p [yyyy] #(si vous trouvez comment faire)
 où [yyyy] est le port fourni par Docker pour accéder au container (docker ps).
 \newline
 \newline
-\textbf{Soutenance:}
-\newline
-\newline
-Le correcteur
-\newline
-1. Buildera votre Dockerfile
-\newline
-2. Lancera le container en mode daemon
-\newline
-3. Et se connectera directement en SSH
-\newline
-(3 commandes, pas 4).
-\newline
-\newline
 \info
 {
-	Bonne pratique: un container sécurisé ne permet pas de connexion SSH.
+	Pro tip: dans la vraie vie, un container sécurisé ne permet pas de connexion SSH.
 }
 
 	\newpage
@@ -208,10 +192,7 @@ Le correcteur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2 Mission 3 - Volumes on MacOS X
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 3}
-\begin{center}
-	{\Huge Volumes on MacOS X}
-\end{center}
+\section{Mission 3 - Volumes on MacOS X}
 
 Rendre vos fichiers pour soutenance dans mission03 (s’il y en a).
 \newline
