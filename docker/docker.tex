@@ -23,8 +23,8 @@
 \title{Docker On Mac}
 \subtitle{Sur Linux c'est trop simple}
 
-\member {42 staff}{staff@42.fr}
 \member {Jean-Jacques MOIROUX}{jmoiroux@student.42.fr}
+\member {42 staff}{pedago@42.fr}
 
 \summary
 {
@@ -72,13 +72,13 @@ Le terme aconier, parfois écrit acconier (ou l'anglicisme stevedore), recouvre 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Sujet}
 
-\section{Consigne}
+\section{Consignes}
 \begin{itemize}
 	\item Le sujet sera corrigé par des humains.
 	\item Les containers lors de la soutenance seront hébergés sur votre machine en local.
 	\item Interdiction de faire une soutenance avec un container sur une machine distante, relire la règle juste au-dessus au cas où vous n’auriez pas compris cette règle-ci.
 	\item Il est fortement conseillé pour chaque mission de fournir un script .sh pour lancer le container, le correcteur POURRA vérifier ce script de lancement.
-	\item Vous pouvez utiliser Ubuntu, Debian ou autres du moment que l'arborescence de répertoire suivante est respectée : ''/home/login'' (/home/user). Vous trouverez des images officielles sur Docker Hub.
+	\item Vous pouvez utiliser Ubuntu, Debian, fedora, CentOS, ArchLinux ou autres du moment que l'arborescence de répertoire suivante est respectée :  \texttt{/home/login (/home/user)}. Vous trouverez des images officielles sur \href{https://registry.hub.docker.com/search?q=library}{Docker Hub}.
 \end{itemize}
 
 	\newpage
@@ -86,26 +86,16 @@ Le terme aconier, parfois écrit acconier (ou l'anglicisme stevedore), recouvre 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 1 Mission 0 - Installer Docker sur Mac
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 0}
-\begin{center}
-	{\Huge Installer Docker sur Mac}
-\end{center}
+\section{Mission 0 - Installer Docker sur Mac}
 
-Rendre vos fichiers pour soutenance dans mission00 (s’il y en a)
-\newline
-\newline
-Installer Docker sur votre session Mac. Il est fort probable que vous ayez besoin d’utiliser \textbf{Brew} et \textbf{Boot2docker}.
-\newline
-\newline
-Dans le cas où Brew ne fonctionne pas sur votre session, au lieu de perdre du temps à vous plaindre auprès de la pédago, demandez à votre voisin de droite ou de gauche de copier son répertoire ''-/.brew'' et de vous le transmettre en totalité.
-\newline
-\newline
-Il est possible d’installer Docker en utilisant des VM, mais dans ce cas-ci Docker perd tout son intérêt.
-\newline
-\newline
-Montrez à votre correcteur qu’un ''docker'' fonctionne.
-\newline
-\newline
+\begin{itemize}
+	\item Rendre vos fichiers pour soutenance dans mission00 (s’il y en a)
+	\item Installer Docker sur votre session Mac. Il est fort probable que vous ayez besoin d’utiliser \textbf{Brew} et \textbf{Boot2docker}.
+	\item Dans le cas où Brew ne fonctionne pas sur votre session, au lieu de perdre du temps à vous plaindre auprès de la pédago, demandez à votre voisin de droite ou de gauche de copier son répertoire \textbf{-/.brew} et de vous le transmettre en totalité.
+	\item Il est possible d’installer Docker en utilisant des VM, mais dans ce cas-ci Docker perd tout son intérêt.
+	\item Montrez à votre correcteur qu’un \textbf{docker} fonctionne.
+\end{itemize}
+
 Exemple:
 \begin{42console}
 $> docker info
@@ -131,52 +121,39 @@ $>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2 Mission 1 - "Hello Wolrd"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 1}
-\begin{center}
-	{\Huge ''Hello Wolrd''}
-\end{center}
+\section{Mission 1 - Hello World}
 
-Rendre vos fichiers pour soutenance dans mission01: le script du lancement du container (non obligatoire).
-\newline
-\newline
-Afficher ''Hello World'' dans votre navigateur à l’url suivant
-\begin{42console}
-IPContainer:xxxx ou localhost:xxxx #(si vous trouvez comment faire)
-\end{42console}
-où [xxxx] est le port fourni par Docker pour accéder au container hébergeant le serveur web.
-\newline
-\newline
-À la soutenance, le correcteur lancera le container ''hello/wolrd:v42'' ( [REPOSITORY]:[TAG] ) en mode interactif. Le prompt du container devra afficher
-\begin{42console}
-login@42born2code:/#
-\end{42console}
+\begin{itemize}
+	\item Rendre vos fichiers pour soutenance dans mission01: le script du lancement du container (non obligatoire).
+	\item Afficher "\textbf{Hello World}" dans votre navigateur à l’url suivant
+	\begin{42console}
+		IPContainer:xxxx ou localhost:xxxx #(si vous trouvez comment faire)
+	\end{42console}
+	où [xxxx] est le port fourni par Docker pour accéder au container hébergeant le serveur web.
+	\item À la soutenance, le correcteur lancera le container \texttt{hello/world:v42 ([REPOSITORY]:[TAG] )} en mode interactif. Le prompt du container devra afficher
+	\begin{42console}
+		login@42born2code:/#
+	\end{42console}
+\end{itemize}
+\warn
+{
+	\textbf{Attention :} Ne pas utilisez d'image pré-construite qui fait le Hello World tout en un. Il faut bien entendu utiliser une image officielles Linux, vous avez le choix de la distribution. 
+}
 
 	\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2 Mission 2 - SSH Localhost
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 2}
-\begin{center}
-	{\Huge SSH Localhost}
-\end{center}
+\section{Mission 2 - SSH}
 
-Rendre vos fichiers pour soutenance dans mission02: le Dockerfile et les fichiers ajoutés à l’exécution du build de l’image (autant que besoin pour l’accomplissement de la mission).
+Rendre vos fichiers pour la soutenance dans le dossier \texttt{mission02}. Vous devez rendre le \texttt{Dockerfile} et les fichers ajoutés à l'exécution du build de l'image (autant que besoin pour l'accomplissement de la mission).
 \newline
 \newline
-\textbf{Écrire un Dockerfile:}
-\newline
-Au “build” du container OpenSSH sera configuré automatiquement sur le port 42 (interne au container).
+Au build du container, \texttt{OpenSSH} sera configuré automatiquement sur le port 42 (interne au container). Votre clé SSH \texttt{PUBLIQUE} (ne donner jamais votre clé \texttt{PRIVEE}) sera préconfigurée dans le répertoire \textbf{home/login/.ssh/authorized\_keys} du container pour accepter les connexions provenant de votre clé privée; ainsi vous pourrez vous connecter au container.
 \newline
 \newline
-Votre clé ssh \textbf{PUBLIQUE} (ne jamais donner sa clé PRIVEE) sera pré-configurée dans votre
-\begin{42console}
-/home/login/.ssh/authorized_keys
-\end{42console}
-dans le container pour accepter les connexions provenant de votre clé SSH publique ; ainsi vous pourrez vous connecter dans votre container.
-\newline
-\newline
-À la soutenance, votre correcteur devra ''build'' votre ''Dockerfile'' et lancer votre container en mode daemon et se connecter directement dans le container avec la commande suivante
+À la soutenance, votre correcteur devra build votre \texttt{Dockerfile} et lancer votre container en mode \texttt{daemon} et se connecter directemenr dans le container avec la commande suivante:
 \begin{42console}
 ssh login@IPContainer -p [yyyy] #ou
 ssh login@localhost -p [yyyy] #(si vous trouvez comment faire)
@@ -184,23 +161,9 @@ ssh login@localhost -p [yyyy] #(si vous trouvez comment faire)
 où [yyyy] est le port fourni par Docker pour accéder au container (docker ps).
 \newline
 \newline
-\textbf{Soutenance:}
-\newline
-\newline
-Le correcteur
-\newline
-1. Buildera votre Dockerfile
-\newline
-2. Lancera le container en mode daemon
-\newline
-3. Et se connectera directement en SSH
-\newline
-(3 commandes, pas 4).
-\newline
-\newline
 \info
 {
-	Bonne pratique: un container sécurisé ne permet pas de connexion SSH.
+	Pro tip: dans la vrais vie, un container sécurisé ne permet pas de connexion SSH.
 }
 
 	\newpage
@@ -208,18 +171,15 @@ Le correcteur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapitre 2 Mission 3 - Volumes on MacOS X
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mission 3}
-\begin{center}
-	{\Huge Volumes on MacOS X}
-\end{center}
+\section{Mission 3 - Volumes on MacOS X}
 
-Rendre vos fichiers pour soutenance dans mission03 (s’il y en a).
+Rendre vos fichiers pour soutenance dans \texttt{mission03}.
 \newline
 \newline
-Trouver un moyen de partager un répertoire de la machine physique avec un répertoire à l'intérieur du container (montage Volume).
+Trouver un moyen de partager un répertoire de la machine physique avec un répertoire à l'intérieur du container (montage \texttt{Volume}).
 On est au courant, c’est moche, mais vous aurez juste à montrer lors de la soutenance qu’un
 \begin{42console}
-touch filetest
+	touch filetest
 \end{42console}
 dans le répertoire partagé est bien synchronisé avec le répertoire interne du container.
 \newline
@@ -227,15 +187,8 @@ dans le répertoire partagé est bien synchronisé avec le répertoire interne d
 \newline
 \warn
 {
-\textbf{Attention:}
-\newline
-\newline
-Ici on ne vous demande pas un container/volume ''---volume'' comme il est possible de faire de base (pour un bonus par exemple).
-\newline
-\newline
-Vous devrez donc utiliser l’option
-\newline
-''-v répertoirePhysique:répertoireContainer'' au lancement du container.
+\textbf{Attention:} Ici on ne vous demande pas un container/volume "---volume" comme il est possible de faire de base. Vous devrez donc utiliser l’option
+"-v répertoirePhysique:répertoireContainer" au lancement du container.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -244,34 +197,27 @@ Vous devrez donc utiliser l’option
 \chapter{Bonus}
 
 Pour le rendu des bonus d'environnement complet:
-\newline
-Chaque bonus sera nommé bonus01, bonus02 …. bonus[xx].
-\newline
-\newline
-Dans chacun de ces répertoires il y aura un Dockerfile et les fichiers joints lors de l’exécution du build (une création d'environnement ne devrait pas dépasser les 500Ko par bonus, Dockerfile compris).
-\newline
-\newline
-Pourquoi ne pas générer des Dockerfiles pour des environnements multiples ? Par exemple:
-\newline
 \begin{itemize}
-	\item environnement de développement pour RubyOnRails, servi par Nginx et PostgresSQL ;
-	\item environnement Django, avec du NoSQL par exemple ;
-	\item environnement PHP ;
-	\item environnement Java prêt à être déployé.
-\end{itemize}
-Ce sont des idées, vous devrez convaincre votre correcteur que votre Dockerfile peut faire gagner des demi-journées d’installation voir des semaines pour la mise en production d'environnements Linux.
-\newline
-\newline
-D’autres exemples:
-\newline
-\begin{itemize}
-	\item Externaliser (monter en Volume) les logs Linux /var/log (comme cela votre image Docker ne grossira pas) ;
-	\item Externaliser une base de données (pour la persistance des données par exemple) ;
-	\item Lancer un container à l'intérieur d’un container (Légende urbaine) ;
-	\item Déplacer la VM Boot2docker sur une Clé USB   pour alléger votre session.
-\end{itemize}
+	\item Chaque bonus sera nommé \texttt{bonus01}, \texttt{bonus02} …. \texttt{bonus[xx]}.
+	\item Dans chacun de ces répertoires il y aura un \texttt{Dockerfile} et les fichiers joints lors de l’exécution du build (une création d'environnement ne devrait pas dépasser les 500Ko par bonus, \texttt{Dockerfile} compris).
+	\item Pourquoi ne pas générer des \texttt{Dockerfiles} pour des environnements multiples ? Par exemple:
+	\begin{itemize}
+		\item environnement de développement pour \texttt{RubyOnRails}, servi par \texttt{Nginx} et \texttt{PostgresSQL} ;
+		\item environnement \texttt{Django}, avec du \texttt{NoSQL} par exemple ;
+		\item environnement \texttt{PHP} ;
+		\item environnement \texttt{Java} prêt à être déployé.
+	\end{itemize}
+	Ce sont des idées, vous devrez convaincre votre correcteur que votre \texttt{Dockerfile} peut faire gagner des demi-journées d’installation voir des semaines pour la mise en production d'environnements \texttt{Linux}.
+	\item D’autres exemples:
+	\begin{itemize}
+		\item Externaliser (monter en \texttt{Volume)} les logs \texttt{Linux /var/log} (comme cela votre image \texttt{Docker ne grossira pas)} ;
+		\item Externaliser une base de données (pour la persistance des données par exemple) ;
+		\item Lancer un container à l'intérieur d’un container (Légende urbaine) ;
+		\item Déplacer la \texttt{VM Boot2docker} sur une Clé USB pour alléger votre session.
+	\end{itemize}
 
-Expliquer à votre correcteur comment vous y êtes arrivé lors de la soutenance.
+	\item Expliquer à votre correcteur comment vous y êtes arrivé lors de la soutenance ! :)
+\end{itemize}
 
 	\newpage
 
@@ -281,35 +227,16 @@ Expliquer à votre correcteur comment vous y êtes arrivé lors de la soutenance
 \chapter{Conclusion}
 
 Si vous terminez ce projet avec le dernier bonus proposé, vous aurez peut-être remarqué que vous disposez à présent d’un environnement Linux en ROOT avec dossier partagé et un processus qui consomme 1\% de votre CPU. Pour la mémoire, c’est la même idée, tout vos problèmes de VM sont réglés.
-\newline
-\newline
 Docker n’est pas une VM.
-\newline
-\newline
 Si ça marche en local dans un container, ce même container marchera sur le serveur de production à distance.
-\newline
-\newline
 Il y a une multitude d’options à découvrir sur www.docker.com, ne vous arrêtez pas à ce sujet.
 Docker sous Linux n’a pas de sur-couche Boot2docker, vous aurez un accès direct à Docker.
-\newline
-\newline
 Voir aussi LXC d’où découle l'idée de Docker.
 \newline
 \newline
-\newline
-\newline
-Bon jeu !!!
+Quelques docs : \href{http://docs.docker.com}{Documentation officielle}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapitre 4 Documentation
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Documentation}
-\info
-{
-	http://docs.docker.com			: Documentation officielle. 
-	\newline
-	http://registry.hub.docker.com	: Images officielles. 
-}
+Bon jeu !!!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End document
