@@ -187,6 +187,50 @@
 	\vspace{10mm}
 	Faites-vous plaisir, plein de choses peuvent am\'eliorer l'application.
 
+\chapter{\'Emulation}
+
+	Cette partie vous explique comment utiliser un emulateur Android.
+	\info {
+		L'\'emulateur fournis avec Android Studio ne fonctionne
+		pas pour le moment sur les dumps. Je vous invite \`a utilisez Android
+		Studio sur une VM ou un vrai device si vous voulez tester les SMS.
+	}
+	
+	Plusieurs \'emulateurs Android existent, certain plus ou moins bien,
+	\href{https://www.genymotion.com/}{GenyMotion} est tr\`es performant et facile \`a
+	mettre en place (VirtualBox est requis) mais ne permet pas l'envois de SMS
+	dans sa version gratuite.\\
+	L'AVD (Android Virtual Device) qui est fourni avec Android Studio n'est pas le plus performant, mais
+	vous avez le contr\^ole. Il se met en place tout seul avec Android Studio,
+	c'est intuitif.
+	
+	\vspace{5mm}
+	Pour envoyer un SMS depuis l'AVD :
+	\begin{42console}
+	srudent@e1r1p1$ telnet localhost {port, (titre de la fenetre)}
+	#Trying 127.0.0.1...
+	#Connected to localhost.
+	#Escape character is '^]'.
+	#Android Console: type 'help' for a list of commands
+	#OK
+	sms send {numero} {message}
+	\end{42console}
+	
+	\vspace{5mm}
+	Pour un appel :
+	\begin{42console}
+	srudent@e1r1p1$ telnet localhost {port, (titre de la fenetre)}
+	#[...]
+	gsm call {numero}
+	\end{42console}
+
+	\vspace{5mm}
+	Lorsqu'une image est en cours d'\'execution, l'ordinateur la reconnait comme
+	un t\'el\'ephone.
+	Choississez simplement l'image lorsque vous lancez l'application depuis
+	Android Studio.
+
+
 %******************************************************************************%
 %                                                                              %
 %                           Rendu et peer-evaluation                           %
