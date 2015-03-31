@@ -11,8 +11,11 @@ Options:
 
 __author__ = 'huehue'
 
+import socket
+import threading
+
 from docopt import docopt
-import socket, threading
+
 
 class listener(threading.Thread):
   def __init__(self, (socket, address)):
@@ -33,7 +36,7 @@ class listener(threading.Thread):
     print "[*] Server started"
 
 
-arg = docopt(__doc__, version = '0.1')
+arg = docopt(__doc__, version='0.2')
 limit = int(arg['-t'])
 assert limit > 0, "Threads number must be positive." # assert TEST, ERRMSG
 try :

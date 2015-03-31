@@ -8,7 +8,7 @@ class WorkClass(object):
     def __str__(self):
         return "<Order #%s>" % str(self.itemId)
 
-    def factorize(n):
+    def factorize(self, n):
         ret = []
         nn = n
         while nn % 2 == 0:
@@ -53,11 +53,40 @@ class WorkClass(object):
             ret += [nn]
         return ret
 
+    # Another try
+    # def factorize(n):
+    # factors = []
+    # d = 2o
+    # while n > 1:
+    #         while n % d == 0:
+    #             factors.append(d)
+    #             n /= d
+    #         d = d + 1
+    #         if d*d > n:
+    #             if n > 1: factors.append(n)
+    #             break
+    #     return factors
+
+    # Lame algorithm !
+    # def factorize(n):
+    #     def isPrime(n):
+    #         return not any(x for x in xrange(2, int(sqrt(n)) + 1) if n % x == 0)
+    #
+    #     primes = []
+    #     candidates = xrange(2, n + 1)
+    #     candidate = 2
+    #     while not primes and candidate in candidates:
+    #         if candidate % 2 and n % candidate == 0 and isPrime(candidate):
+    #             primes = primes + [candidate] + factorize(n // candidate)
+    #         candidate += 1
+    #     return primes
+
     def use(self):
-        self.factorize(int(self.data))
+        return (self.factorize(int(self.data)))
+
     @staticmethod
     def from_dict(classname, serialized):
-        assert classname == "workitem.WorkClass"
+        assert classname == "Tool.WorkClass"
         w = WorkClass(serialized["itemId"], serialized["data"])
         w.result = serialized["result"]
         w.Handler = serialized["Handler"]

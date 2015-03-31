@@ -1,5 +1,6 @@
 import random
 import sys
+
 import Pyro4
 from Pyro4.util import SerializerBase
 
@@ -11,8 +12,11 @@ SerializerBase.register_dict_to_class("Tool.WorkClass", WorkClass.from_dict)
 items_number = int(raw_input("How much to compute ? : "))
 if len(sys.argv) >= 2 and sys.argv[1] == '-q':
     quiet = True
+else:
+    quiet = False
 
-def main():
+
+def launch():
     print("\nThis program will send and activate WorkClass units to slaves. Current algo is : PrimeFactorials")
     with Pyro4.core.Proxy("PYRONAME:PrimeFactoServ_42") as master:
         place_work(master)
@@ -23,7 +27,9 @@ def main():
 
 def place_work(master):
     print("placing work instances into master queue.")
+    print items_number
     for i in xrange(items_number):
+        print i
         number = random.randint(3211, 100000) * random.randint(3211, 100000)
         item = WorkClass(i + 1, number)
         master.putWork(item)
@@ -54,5 +60,5 @@ def print_result(numbers):
         print "%s %d <-> %s" % ("{:<5}".format('['+str(len(factorials))+']'),number, factorials)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    launch()

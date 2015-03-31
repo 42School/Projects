@@ -21,9 +21,12 @@ Options:
 
 """
 
-from dns import resolver, reversename, name
-from docopt import docopt
 import re
+
+from dns import resolver, reversename, name
+
+from docopt import docopt
+
 __author__ = 'Ep0ch'
 
 def formatInfoVerb(tab):
@@ -58,7 +61,7 @@ ip_checker = re.compile('(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{
 for target in arg['<host>']:
     if arg['-t']:
         types = [arg['-t']]
-    elif ip_checker.match(target): #Absolute IP
+    elif ip_checker.match(target):  # If IPAddress and no type defined.
         target = reversename.from_address(target)
         if arg['-i']:
             target = name.from_text(target.__str__()[:-5] + 'int')

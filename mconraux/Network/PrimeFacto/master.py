@@ -5,10 +5,7 @@ from Pyro4.util import SerializerBase
 
 from Tool import WorkClass
 
-
 SerializerBase.register_dict_to_class("Tool.WorkClass", WorkClass.from_dict)
-
-
 class MasterQueue(object):
     def __init__(self):
         self.work_queue = Queue.Queue()
