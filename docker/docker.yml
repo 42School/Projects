@@ -50,8 +50,7 @@ sections:
 
       - Il y a bien un rendu (dans le dépôt git), seule la mission 02 nécessite un rendu obligatoire.
 
-      - Pas de triche, les deux étudiants doivent pouvoir expliquer
-        leur code.
+      - Pas de triche, l'étudiant doit pouvoir expliquer son code.
 
       - Toute la correction se déroule en local, les images, containers et autres seront hébergés
       sur la machine en local. S'il y a une seule mission d'effectuée sur une machine à distance,
@@ -134,7 +133,7 @@ sections:
 ##################################################################
 ### MISSION 01
 ###
-- name: Première section
+- name: Mission 01
   description: '”Hello Wolrd”'
 
   questions:
@@ -251,7 +250,7 @@ sections:
 ##################################################################
 ### MISSION 02
 ###
-- name: MISSION 02
+- name: Mission 02
   description: 'SSH Localhost'
 
   questions:
@@ -343,7 +342,7 @@ sections:
 ##################################################################
 ### MISSION 03
 ###
-- name: MISSION 03
+- name: Mission 03
   description: 'Montage Volumes'
 
   questions:
