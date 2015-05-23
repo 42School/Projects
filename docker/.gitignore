@@ -1,9 +1,0 @@
-docker.aux
-docker.log
-docker.out
-docker.pdf
-docker.pyg
-docker.toc
-sample.yml
-scale_schema.yaml
-scale_validator.rb
