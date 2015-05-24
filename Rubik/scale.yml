@@ -84,7 +84,7 @@ sections:
   - name: Gestion d'erreur
     guidelines: |
 
-      Essayez le programme sans paramètre, avec trop de paramètres, avec des paramètres invalides, avec un fichier contenant des séquences non valides... Est-ce que le programme a le comportement attendu dans un pareil cas (affichage de l'usage, quitte avec un message, etc.) ?
+      Essayez le programme sans paramètre, avec trop de paramètres, avec des paramètres invalides, avec un fichier contenant des séquences non valides... Bref, essayez de mettre le programme en défaut. Est-ce que le programme a bien les comportements attendus (affichage de l'usage, quitte avec un message, etc.) ?
 
 
     rating: bool
@@ -97,10 +97,10 @@ sections:
     - percentage: 10
       name: <Algorithms & AI>
 
-  - name: Problème simple
+  - name: Position simple
     guidelines: |
 
-      Essayez le programme avec des mélanges simples, jusqu'à 4-5 mouvements seulement. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+      Essayez le programme avec des mélanges simples, jusqu'à 4-5 mouvements seulement. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
 
     rating: bool
     kind: standard
@@ -113,10 +113,10 @@ sections:
       name: <Algorithms & AI>
 
 
-  - name: Problème un peu plus complexe
+  - name: Position un peu plus complexe
     guidelines: |
 
-      Essayez le programme avec des mélanges plus complexes, entre 5 et 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+      Essayez le programme avec des mélanges plus complexes, entre 5 et 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
 
     rating: bool
     kind: standard
@@ -129,10 +129,10 @@ sections:
       name: <Algorithms & AI>
 
 
-  - name: Problème normal
+  - name: Position aléatoire
     guidelines: |
 
-      Essayez le programme avec des mélanges aléatoires, de taille supérieure à 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+      Essayez le programme avec des mélanges aléatoires, de taille supérieure à 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
 
     rating: bool
     kind: standard
