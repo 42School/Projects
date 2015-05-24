@@ -175,10 +175,10 @@ sections:
     guidelines: |
 
       L'échelle des bonus est au libre jugement du correcteur. Un bonus vraiment hardcore mérite plus que deux bonus vraiment easy. Par exemple, parmi les bonus super classes, qui devraient valoir beaucoup de points s'ils sont correctement réalisés :
-	  - Présence d'une réelle interface graphique (par exemple qui montre la résolution au coup par coup)
-	  - Un algorithme vraiment bourrin qui descend aux frontières de ce qui est possible (moins de 30 mouvements, toujours en 2-3 secondes, c'est vraiment très très bien)
-	  - Un choix entre plusieurs algorithmes de résolution, voire la sélection du meilleur entre ces algorithmes
-	  - Un fonctionnement qui accepte d'autres puzzles de taille n ou de formes bizarres (2x2x2, 4x4x4, Megaminx, Square-1...)
+	  - Présence d'une réelle interface graphique en 3D qui déboîte (par exemple qui montre la résolution au coup par coup)
+	  - Un algorithme vraiment bourrin qui descend aux frontières de ce qui est possible (une moyenne à moins de 30 mouvements, toujours en quelques secondes, c'est vraiment très très TRES bien et mérite clairement un gros bonus)
+	  - Un choix entre plusieurs algorithmes de résolution, voire la sélection automatique du meilleur de ces algorithmes selon le cas
+	  - Un programme qui accepte d'autres puzzles de taille n ou de formes bizarres (2x2x2, 4x4x4, Megaminx, Square-1...)
 	  - ...
 	  
 	  Dans les bonus vraiment moins hardcore mais néanmoins utiles, on peut par exemple trouver :
