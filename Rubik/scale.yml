@@ -137,9 +137,9 @@ sections:
     rating: bool
     kind: standard
     questions_skills:
-    - percentage: 30
+    - percentage: 20
       name: <Rigor>
-    - percentage: 30
+    - percentage: 20
       name: <Imperative programming>
     - percentage: 20
       name: <Algorithms & AI>
@@ -155,11 +155,28 @@ sections:
     rating: multi
     kind: standard
     questions_skills:
-    - percentage: 10
+    - percentage: 5
       name: <Rigor>
-    - percentage: 10
+    - percentage: 5
       name: <Imperative programming>
-    - percentage: 30
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Distance-20
+    guidelines: |
+
+      U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2
+	  Cette position, appelée superflip, fait partie des positions qui nécessitent toujours au moins 20 mouvements pour être résolues ("Distance-20"). Est-ce que le programme résout ce Cube dans un nombre de mouvements comparable aux résultats des questions précédentes ? Essayez avec d'autres mélanges de ce type (http://www.cube20.org/distance20s/).
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 15
+      name: <Imperative programming>
+    - percentage: 10
       name: <Algorithms & AI>
 
 
