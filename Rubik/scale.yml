@@ -67,82 +67,147 @@ sections:
     kind: standard
     questions_skills:
     - percentage: 0
-      name: <nom de la skill 1>
-      ...
+      name: <Rigor>
     - percentage: 0
-      name: <nom de la skill n>
+      name: <Imperative programming>
+    - percentage: 0
+      name: <Algorithms & AI>
 
 
-- name: Premiere section
-  description: 'La description de la premiere section'
+- name: Partie obligatoire
+  description: 'Problèmes simples'
 
 
   questions:
 
 
-  - name: Premiere question
+  - name: Gestion d'erreur
     guidelines: |
 
-      Guidelines de la premiere question utilisant la syntaxe block de
-      YAML. Notez le caractere '|' juste au dessus.
+      Essayez le programme sans paramètre, avec trop de paramètres, avec des paramètres invalides, avec un fichier contenant des séquences non valides... Est-ce que le programme a le comportement attendu dans un pareil cas (affichage de l'usage, quitte avec un message, etc.) ?
+
 
     rating: bool
     kind: standard
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 15
+      name: <Imperative programming>
+    - percentage: 10
+      name: <Algorithms & AI>
 
-  - name: Deuxieme question
+  - name: Problème simple
     guidelines: |
 
-      Idem.
+      Essayez le programme avec des mélanges simples, jusqu'à 4-5 mouvements seulement. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 25
+      name: <Rigor>
+    - percentage: 25
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Problème un peu plus complexe
+    guidelines: |
+
+      Essayez le programme avec des mélanges plus complexes, entre 5 et 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: <Rigor>
+    - percentage: 20
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Problème normal
+    guidelines: |
+
+      Essayez le programme avec des mélanges aléatoires, de taille supérieure à 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes maximum) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: <Rigor>
+    - percentage: 30
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Performance
+    guidelines: |
+
+      Pour des mélanges de taille supérieures à une trentaine de mouvements, le programme est-il capable de le résoudre en moyenne en moins de 150 mouvements et toujours sous 2-3 secondes, affichage compris ?
+	  Si la réponse est non, alors mettez 0 à cette question.
+	  Ajoutez 1 point par tranche de 20 mouvements gagnés.
 
     rating: multi
     kind: standard
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 10
+      name: <Rigor>
+    - percentage: 10
+      name: <Imperative programming>
+    - percentage: 30
+      name: <Algorithms & AI>
 
 
 
 - name: Bonus
-  description: ''
+  description: 'Partie bonus'
 
 
   questions:
 
 
-  - name: Premier bonus
+  - name: Bonus du programme
     guidelines: |
 
-      Description...
-
-    rating: bool
-    kind: bonus
-    questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
-
-
-  - name: Deuxieme bonus
-    guidelines: |
-
-      Idem.
+      L'échelle des bonus est au libre jugement du correcteur. Un bonus vraiment hardcore mérite plus que deux bonus vraiment easy. Par exemple, parmi les bonus super classes, qui devraient valoir beaucoup de points s'ils sont correctement réalisés :
+	  - Présence d'une réelle interface graphique (par exemple qui montre la résolution au coup par coup)
+	  - Un algorithme vraiment bourrin qui descend aux frontières de ce qui est possible (moins de 30 mouvements, toujours en 2-3 secondes, c'est vraiment très très bien)
+	  - Un choix entre plusieurs algorithmes de résolution, voire la sélection du meilleur entre ces algorithmes
+	  - Un fonctionnement qui accepte d'autres puzzles de taille n ou de formes bizarres (2x2x2, 4x4x4, Megaminx, Square-1...)
+	  - ...
+	  
+	  Dans les bonus vraiment moins hardcore mais néanmoins utiles, on peut par exemple trouver :
+	  - Un générateur de mélanges,
+	  - Une subdivision de la réponse en étapes "humainement compréhensibles"
+	  - ...
 
     rating: multi
-    kind: bonus
+    kind: standard
     questions_skills:
-    - percentage: x
-      name: <nom de la skill 1>
-      ...
-    - percentage: y
-      name: <nom de la skill n>
+    - percentage: 10
+      name: <Rigor>
+    - percentage: 25
+      name: <Imperative programming>
+    - percentage: 10
+      name: <Algorithms & AI>
+
+
+  - name: Bonus du corrigé
+    guidelines: |
+
+      Trouvez un Rubik's Cube et démontrez votre agilité. Plus c'est impressionnant, mieux c'est. Indice : Sous 30-40 secondes, c'est TRES impressionnant. Mais il n'y a pas que la vitesse dans la vie, faites preuve d'inventivité ! Et parlez-en entre vous... :-)
+
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 0
+      name: <Imperative programming>
+    - percentage: 15
+      name: <Algorithms & AI>
