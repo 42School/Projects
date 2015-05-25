@@ -41,7 +41,8 @@
 
 \summary
 {
-	This project is an introduction to OpenGL.
+  You like matrices ? Hmm... but do they like YOU ? \\
+  After this project, you'll know both answers.
 }
 
 \maketitle
@@ -123,14 +124,13 @@
 \newpage
 	\chapter{Introduction}
 
-		In this project, you must implement a skeletal animation (also called 'Rigging') with a hierarchical model.\\
+		In this project, you must implement a skeletal animation (also called 'Rigging') with a hierarchical model. In order to achieve that you will need to implement your very own matrices and matrix stack.\\
 		\\
-		This project is an introduction to OpenGL and matrix manipulation. You will learn to use matrices in order to link different parts of a model and make them move together in a logical way.
 
 \newpage
 	\chapter{The project}
 		\section{Mendatory part}
-		Body parts should be correctly articulated using the OpenGL matrix stack. If the torso rotate, all the members must follow accordingly, therefore if the upper arm move only the forearm have to follow. When you modify the size of a member, related parts automatically reposition themself.\newline
+		Body parts should be correctly articulated using your own matrix stack implementation. For example, if the torso rotate, all the members must follow accordingly, therefore if the upper arm move only the forearm have to follow. When you modify the size of a member, related parts automatically reposition themself.\newline
 		Your model will have the following parts :
 		\begin{ft_itemize}
 			\item a head
@@ -158,6 +158,8 @@
 	\section{Constraints}
 		The following constraints have to be respected in order to have points.
 		\subsection{Realisation}
+            You must implement all the matrix stuff (matrices, matrix stack, transformations...).\\
+            \\
 			Each body part will be drawn by one and only one function call. This function will draw a 1x1x1 geometric shape at the origin of the current matrix.
 		\\
 		\info
@@ -166,9 +168,11 @@
 		}
 		\
 		\subsection{Language}
+            You must use OpenGL; modern OpenGL: 4.0 minimum, shaders are of course not an option.\\
+            \\
 			A makefile or something similar is required. Only what contains your repository will be evaluated.\\
 			\\
-			You can use the graphic library of your choice (SDL2, Glut, SFML..) but you need to use OpenGL matrices and associated functions.\\
+			You can use the graphic library of your choice (MLX, GLFW, SDL2, SFML...) but you can't use libraries that do the job for you. For exemple, GLM-like libraries will result in 0 points.\\
 			\\
 			You are free to use whatever language you want. If you use C, you have to respect the Norm, as usual.\\
 
