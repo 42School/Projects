@@ -347,6 +347,8 @@ sections:
 
   questions:
 
+  - Comme expliqué dans le sujet, le corrigé n’a pas à utiliser le partage par default présent dans /Users. Si c’est le cas vous ne mettez aucun point.
+
   - name: Montage répertoire en Volume dans un container
     guidelines: |
 
