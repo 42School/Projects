@@ -1,0 +1,128 @@
+---
+name: ft_linear_regression
+lg: fr
+is_primary: true
+comment: ''
+introduction_md: |
+  Nous vous demandons, pour le bon déroulement de cette notation :
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+  Bonne soutenance à tous !
+disclaimer_md: ''
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.
+correction_number: 5
+duration: 2
+sections:
+- name: Préliminaires
+  description: ''
+  questions:
+  - name: Consignes préliminaires
+    guidelines: |
+      Vérifiez d'abord les éléments suivants :
+      - Il y a bien un rendu (dans le dépôt git)
+      - Pas de triche, l'étudiant doit pouvoir expliquer
+        son code.
+      - Il y a bien deux programme, un pour la prédiction et un pour l'apprentissage.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Rigor
+    - percentage: 0
+      name: Algorithms & AI
+    position: 1
+  position: 1
+- name: Premiere section
+  description: Partie Obligatoire
+  questions:
+  - name: Prédiction avant apprentissage
+    guidelines: |
+      Lancez le programme de prédiction, ce dernier devrait vous demander un kilométrage, entré une valeur.
+      Le programme affiche le résulta de sa prédiction qui devrait être 0 étant donné qu'il n'est pas passer par la phase d'apprentissage. L'équation et bien du format : theta0 + (theta1 * x).
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Rigor
+    - percentage: 20
+      name: Algorithms & AI
+    position: 1
+  - name: Phase d'apprentissage
+    guidelines: |
+      Demander au corriger de vous montrer sont implémentation de la régression linéaire, vous devez vérifier que l'équation présente dans le sujet et bien implémenter, que le programme sauvegarde bien les coefficient theta0 et theta1 à la fin de son exécution. N'oubliez pas que si vous ne voyez pas l'équation mais qu'une fonction comme numpy.polyfit a etait utilisé à la place c'est un cas de triche donc flag triche.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 40
+      name: Rigor
+    - percentage: 40
+      name: Algorithms & AI
+    position: 2
+  - name: Lecture du fichier csv
+    guidelines: |
+      Le programme d'apprentissage lit le fichier csv et l'utilise comme référence pour l'apprentissage.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Rigor
+    - percentage: 10
+      name: Algorithms & AI
+    position: 3
+  - name: Assignation simultané
+    guidelines: "Ici c'est un point un peu plus complexe vous devez vérifier que les
+      deux paramètres theta0 et theta1 sont bien assignés simultanément au long de
+      la phase d'apprentissage. pour cela vérifier que le résulta des deux équations
+      de la phase d'apprentissage sont bien stocker dans des temporaire, à la fin
+      de chaque tour de boucle theta0 et theta1 se voient assigner leur temporaire
+      respective. \n"
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Rigor
+    - percentage: 10
+      name: Algorithms & AI
+    position: 4
+  - name: Prédiction après apprentissage
+    guidelines: |
+      Relancer le programme de prédiction du début, ce dernier vous demandez à nouveau un kilométrage. Cette fois-ci entrer un kilométrage pour lequel vous connaissez le prix de la voiture (prenez un exemple dans le fichier csv). Le programme devrait vous afficher un prix. Ce prix est-il cohérent avec celui du csv ? Notez que l'imprécision entre le prix réel et le prix prédit et totalement normale il s'agit d'une prédiction et non d'une valeur exacte. Il serait louche de tomber sur la valeur exacte cela pourrait vouloir dire que nous sommes dans un cas d'over-fitting (un point bonus si le corriger peut expliquer ce qu'est un cas d'over-fitting)
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Rigor
+    - percentage: 20
+      name: Algorithms & AI
+    position: 5
+  position: 2
+- name: Bonus
+  description: Partie Bonus
+  questions:
+  - name: Bonus
+    guidelines: |
+      * un graphique qui montre la répartition des données
+      * un graphique qui montre le resultas de l'apprentissage
+      * un programme pour calculer la précision de l'algorithme
+      N'importe quel bonus super cool.
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 25
+      name: Rigor
+    - percentage: 25
+      name: Algorithms & AI
+    position: 1
+  position: 3
