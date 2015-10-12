@@ -1,0 +1,324 @@
+---
+name: Swifty Assistant
+
+is_primary: true
+lg: fr
+
+comment: ''
+
+introduction_md: |
+
+  Nous vous demandons, pour le bon déroulement de cette notation :
+
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+
+  Bonne soutenance à tous !
+
+disclaimer_md: ''
+
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.
+
+correction_number: 5
+duration: 2
+
+
+sections:
+
+
+#******************************************************************************#
+#                                                                              #
+#                                Preliminaires                                 #
+#                                                                              #
+#******************************************************************************#
+
+
+- name: Préliminaires
+  description: ''
+  position: 1
+
+  questions:
+
+
+  - name: Consignes préliminaires
+    guidelines: |
+
+      Vérifiez d'abord les éléments suivants :
+
+      - Il y a bien un rendu (dans le dépôt git)
+      - Pas de triche, les deux étudiants doivent pouvoir expliquer
+        leur code.
+      - Le projet est bien en swift 2.0+ et tourne avec XCode 7.0+.
+
+      Si un élément de cette liste n'est pas respecte, la notation
+      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      continuer de débattre du projet, mais le barème n'est pas
+      appliqué.
+
+
+    position: 1
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Adaptation and Creativity
+    - percentage: 0
+      name: Rigor
+    - percentage: 0
+      name: Object oriented programming
+    - percentage: 0
+      name: Technology integration
+    - percentage: 0
+      name: DB & Data
+
+
+
+
+#******************************************************************************#
+#                                                                              #
+#                                Swifty Assistant                              #
+#                                                                              #
+#******************************************************************************#
+
+
+- name: Premiere section
+  description: Partie Obligatoire
+
+
+  questions:
+
+
+  - name: Compilation
+    guidelines: |
+      Vérifiez que le projet compile et que le simulateur se lance correctement.
+      Si ce n'est pas le cas, la correction s'arrête.
+
+    position: 1
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Technology integration
+    - percentage: 10
+      name: Rigor
+
+
+  - name: Views
+    guidelines: |
+      Vérifiez que deux vues minimums sont présentes: une vue où la recherche d'un login peut être
+      effectué, et l'autre où le dashboard d'un user est disponible.
+
+    position: 2
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 20
+      name: Object oriented programming
+    - percentage: 10
+      name: Technology integration
+
+
+  - name: API
+    guidelines: |
+      Vérifiez que l'API la plus recente disponible est utilisée.
+
+    position: 3
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Rigor
+    - percentage: 15
+      name: DB & Data
+
+
+  - name: Search User
+    guidelines: |
+      - Vérifiez avec plusieurs logins que cette vue fonctionne:
+        D'abord avec un login étudiant, ensuite avec un login staff type NS, Thor qui ne
+        remplisse pas de projet et enfin avec un login qui n'existe pas (notation 1/3/5).
+
+    position: 4
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 10
+      name: Rigor
+    - percentage: 15
+      name: Object oriented programming
+    - percentage: 10
+      name: Technology integration
+    - percentage: 25
+      name: DB & Data
+
+
+  - name: Dashboard -> Profil View
+    guidelines: |
+      - Vérifiez que les informations utilisateurs sont présentes. Au moins quatres informations doivent etre affichées ainsi que la photo.
+
+    position: 5
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 10
+      name: Rigor
+    - percentage: 15
+      name: Object oriented programming
+    - percentage: 15
+      name: Technology integration
+    - percentage: 15
+      name: DB & Data
+
+
+  - name: Dashboard -> Skills
+    guidelines: |
+      - Vérifiez que les skills sont tous présents avec leurs niveaux.
+
+    position: 6
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 10
+      name: Rigor
+    - percentage: 15
+      name: Object oriented programming
+    - percentage: 15
+      name: Technology integration
+    - percentage: 15
+      name: DB & Data
+
+
+  - name: Dashboard -> Projects
+    guidelines: |
+      - Vérifiez que les projets ou l'utilisateur a été inscrit sont biens présents avec leurs
+        pourcentages qu'ils soient réussis ou pas.
+
+    position: 7
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 10
+      name: Rigor
+    - percentage: 15
+      name: Object oriented programming
+    - percentage: 15
+      name: Technology integration
+    - percentage: 15
+      name: DB & Data
+
+
+  - name: Autolayout
+    guidelines: |
+      - Vérifiez que l'application tourne sous toutes les versions d'iphone disponible sous
+        ios 9+, c'est a dire iphone 4s, 5, 5c, 5s, 6, 6plus, 6s ,6s plus.
+
+    position: 8
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 20
+      name: Rigor
+    - percentage: 15
+      name: Technology integration
+
+
+  - name: Token API
+    guidelines: |
+      Vérifiez qu'un token n'est pas crée a chaque requête.
+
+    position: 9
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Adaptation and Creativity
+    - percentage: 15
+      name: Rigor
+    - percentage: 20
+      name: Object oriented programming
+    - percentage: 10
+      name: Technology and integration
+    - percentage: 15
+      name: DB & Data
+
+
+
+
+#******************************************************************************#
+#                                                                              #
+#                                    Bonus                                     #
+#                                                                              #
+#******************************************************************************#
+
+
+- name: Bonus
+  description: ''
+
+
+  questions:
+
+
+  - name: Custom Cell
+    guidelines: |
+      Vérifiez que des customs cell ont été utilisées pour personaliser leurs tableView.
+
+    position: 1
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation and Creativity
+    - percentage: 15
+      name: Rigor
+    - percentage: 15
+      name: Object oriented programming
+    - percentage: 15
+      name: Technology and integration
+    - percentage: 15
+      name: DB & Data
+
+
+  - name: Bonus
+    guidelines: |
+      D'autres bonus sont-ils disponibles (d'autres informations, est ce que c'est beau, ergonomique, etc ...)
+
+    position: 2
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 10
+      name: Adaptation and Creativity
+    - percentage: 10
+      name: Rigor
+    - percentage: 10
+      name: Object oriented programming
+    - percentage: 10
+      name: Technology and integration
+    - percentage: 10
+      name: DB & Data
