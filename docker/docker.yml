@@ -1,0 +1,417 @@
+# https://docs.google.com/document/d/12rWC-7hZ66kTZBNhjtN-wh1huBwyFEt_8pta5QAWQuE/edit?usp=sharing
+# Correction original
+---
+name: Docker
+
+is_primary: true
+comment: ''
+
+introduction_md: |
+
+  Nous vous demandons, pour le bon déroulement de cette notation :
+
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+
+  Bonne soutenance à tous !
+
+disclaimer_md: ''
+
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.|
+
+correction_number: 5
+duration: 2
+
+sections:
+
+- name: Préliminaires
+  description: ''
+
+  questions:
+
+  - name: Consignes préliminaires
+    guidelines: |
+
+      Vérifiez d'abord les éléments suivants :
+
+      - Il y a bien un rendu (dans le dépôt git), seule la mission 02 nécessite un rendu obligatoire.
+
+      - Pas de triche, l'étudiant doit pouvoir expliquer son code.
+
+      - Toute la correction se déroule en local, les images, containers et autres seront hébergés
+      sur la machine en local. S'il y a une seule mission d'effectuée sur une machine à distance,
+      la correction s'arrête. Rendu invalide.
+
+      - Tout les build d'images commence a partir d'une image officielle Linux disponible sur docker Hub
+      FROM: ubuntu:14.04 (Dockerfile) par exemple (non pas un variante qui est déjà pré-construite)
+
+      Si un élément de cette liste n'est pas respecté, la notation
+      s'arrête là. Utilisez le flag approprié. Vous êtes encouragés à
+      continuer de débattre du projet, mais le barème n'est pas
+      appliqué.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
+##################################################################
+##################################################################
+### MISSION 00
+###
+- name: Mission 00
+  description: 'Installer Docker sur Mac'
+
+  questions:
+
+  - name: Docker fonctionne-t-il ?
+    guidelines: |
+
+      La commande “docker” doit vous retourner une liste de commandes
+      pour utiliser Docker, cela veut dire que Docker est bien installé.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 10
+      name: Technology integration
+
+    - percentage: 10
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: Docker est-il installé grâce à l’utilisation de boot2docker ?
+    guidelines: |
+
+      Ce serait vraiment dommage d’avoir utilisé une VM pour cela, Docker perd tout son interêt.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 5
+      name: Organization
+##################################################################
+##################################################################
+### MISSION 01
+###
+- name: Mission 01
+  description: '”Hello Wolrd”'
+
+  questions:
+
+  - name: Affichage de “Hello World” dans un navigateur, à l’adresse d’un container Docker
+    guidelines: |
+
+      Attention, en tant que correcteur vous devez être sûr que l’affichage
+      de la page n’est pas généré par un processus physique du Mac, le corrigé
+      doit vous prouver qu’il y a bien un serveur web dans un container Docker
+      qui affiche la page.
+
+      Pour rechercher le port du serveur web, vous devez taper dans la console
+      de la machine physique (pas dans un container)
+      “docker ps”
+      En sortie à la colonne PORTS, vous aurez plusieurs redirections de port. Par
+      défaut le port web interne du container est le port 80, il est possible que
+      le corrigé ait mis sa page web sur un autre port.
+
+      Cherchez la flèche qui correspond 0.0.0.0:xxxxx->yy ex
+        0.0.0.0:49168->80/tcp
+
+      Pour l’IP vous devrez taper dans une console du Mac (pas dans un container)
+      --]  “boot2docker ip”
+      En sortie le shell vous retourne l’IP d’où est accessible le container ex
+      --]  192.168.59.103
+
+      Au final pour accéder au hellowolrd vous aurez donc dans cet exemple
+      --]  192.168.59.103:49168
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Unix
+
+    - percentage: 10
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 15
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: A utilisé une option spécifique lors du “docker build” pour le nom de l’image
+    guidelines: |
+      --tag="" par exemple
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 5
+      name: Network & system administration
+
+    - percentage: 15
+      name: Technology integration
+
+    - percentage: 15
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: Dans le container en mode interactif “-i -t”, le prompt affiche “login@42born2code”
+    guidelines: |
+      S’il a fait une manipulation dans le container pour arriver au même
+      résultat, ça veut dire qu’il s’est comliqué la vie pour le faire, donc faites lui
+      comprendre que c’est un noob.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Unix
+
+    - percentage: 5
+      name: Network & system administration
+
+    - percentage: 15
+      name: Technology integration
+
+    - percentage: 15
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: A utilisé une option spécifique lors du “docker run” du container
+    guidelines: |
+
+      S’il a fait une manipulation dans le container pour arriver au même résultat:
+      ça veut dire qu’il s’est pris la tête pour le faire, donc faites lui comprendre
+      que c’est un noob.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 15
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
+##################################################################
+##################################################################
+### MISSION 02
+###
+- name: Mission 02
+  description: 'SSH Localhost'
+
+  questions:
+
+  - name: Build du Dockerfile réussi
+    guidelines: |
+
+      Comme expliqué dans le sujet, il est interdit de SSH une machine distante,
+      la soutenance se fait sur des containers en local, vérifiez que la commande
+      de connexion ssh est bien effectuée sur l’IP de “boot2docker ip”.
+
+      Dans le dépôt il doit être présent un répertoire mission02, à l’intérieur
+      il y a au minimum un fichier nommé “Dockerfile”. Il y en aura d’autres,
+      le corrigé vous expliquera à quoi ils servent.
+
+      Construire l’image à partir du Dockerfile, faites-vous aider par le corrigé.
+      À la fin du build le shell vous retournera
+      --]  “Successfully built [idImage]”
+      ce qui confirmera que la construction de l’image a réussi.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: Unix
+
+    - percentage: 20
+      name: Network & system administration
+
+    - percentage: 15
+      name: Technology integration
+
+    - percentage: 30
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: Connexion SSH réussie
+    guidelines: |
+
+      Lancer l’image générée précédemment (idImage) en mode daemon
+      --]  “docker run -d…” aidez-vous du corrigé
+
+      Comme pour la mission01, récupérez le port de redirection qui est lié au
+      port 42 interne au container (“docker ps”) ex:
+      --]  0.0.0.0:49159->42
+
+      Connectez-vous en SSH sur le container
+      --]  “ssh login@IPContainer -p port” ou “ssh root@IPContainer -p port”
+
+      Le shell pourrait vous demander si vous acceptez la connexion sur la dite IP, “yes”
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Unix
+
+    - percentage: 30
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
+  #################################
+  #################################
+  #################################
+  - name: Connexion SSH réussie sur le port 42 interne du container
+    guidelines: |
+      Dans la configuration du serveur SSH, le port configuré est le port 42
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Unix
+
+    - percentage: 30
+      name: Network & system administration
+
+    - percentage: 0
+      name: Technology integration
+
+    - percentage: 10
+      name: Organization
+##################################################################
+##################################################################
+### MISSION 03
+###
+- name: Mission 03
+  description: 'Montage Volumes'
+
+  questions:
+
+  - Comme expliqué dans le sujet, le corrigé n’a pas à utiliser le partage par default présent dans /Users. Si c’est le cas vous ne mettez aucun point.
+
+  - name: Montage répertoire en Volume dans un container
+    guidelines: |
+
+      Il y a plusieurs méthodes pour monter des répertoires (sur la machine physique)
+      en volume dans un container, mais elles ont toutes un point commun : au lancement
+      du container, l’option
+      --]  “-v répertoirePhysique:répertoireContainer”
+      doit être renseignée au moins une fois lors de la commande docker run.
+      De la même manière, il n’est pas demandé de faire un montage volume de cette sorte
+      --]  “--volume”
+
+      Le corrigé vous expliquera comment il a fait.
+
+      Pour tester le partage, il suffira de faire un
+      --]  “touch filetest”
+      dans le répertoire partagé et de faire un “ls” de l’autre côté. testez réciproquement
+      la manipulation pour être sûr que le partage fonctionne bien dans les deux sens.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Unix
+
+    - percentage: 0
+      name: Network & system administration
+
+    - percentage: 30
+      name: Technology integration
+
+    - percentage: 0
+      name: Organization
+##################################################################
+##################################################################
+### BONUS
+###
+- name: Bonus
+  description: ''
+
+  questions:
+
+  - name: Premier bonus
+    guidelines: |
+
+      Pour le rendu des bonus d’environnement complet : Chaque bonus sera nommé bonus01,
+      bonus02 . . . . bonus[xx].
+
+      Pour des bonus de Dockerfile s’il y a, le dossier bonus ne doit pas dépasser 500Ko
+      --]  "du -hs bonus[x]" pour voir la taille du dossier complet
+      Pour chaque Dockerfile bonus le corrigé doit vous en expliquer l’utilité et le
+      gain de temps qui en découle.
+
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 25
+      name: Unix
+
+    - percentage: 25
+      name: Network & system administration
+
+    - percentage: 25
+      name: Technology integration
+
+    - percentage: 25
+      name: Organization

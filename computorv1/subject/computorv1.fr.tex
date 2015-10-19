@@ -1,0 +1,250 @@
+%******************************************************************************%
+%                                                                              %
+%              computor.tex for peer-pedagogy                                  %
+%              Created on : Wed Mar 18 12:09:18 2015                           %
+%              Made by : Sebastien Julliot <sjulliot@student.42.fr>            %
+%                                                                              %
+%******************************************************************************%
+\documentclass{42}
+\usepackage{amsmath, amsfonts, amssymb}
+\graphicspath{{images/}}
+
+
+
+%******************************************************************************%
+%                                                                              %
+%                                   Prologue                                   %
+%                                                                              %
+%******************************************************************************%
+\begin{document}
+
+                              \title{Computor v1}
+                     \subtitle{"Moi non plus j'ai pas le bac"}
+                \member{Sebastien Julliot}{sjulliot@student.42.fr}
+                     \member{42 staff}{pedago@staff.42.fr}
+
+\summary {
+  Ce projet est le premier d'une série ayant pour but de vous
+  faire renouer avec les maths, qui vous seront très utiles -voire
+  nécessaires- pour de nombreux autres projets.
+}
+
+\maketitle
+
+\tableofcontents
+
+
+%******************************************************************************%
+%                                                                              %
+%                                  Preambule                                   %
+%                                                                              %
+%******************************************************************************%
+\chapter{Préambule}
+
+    Un polynôme est une expression formelle de la forme:\\
+
+	\begin{equation}
+        P(X)=\sum_{k=0}^{n} a_k X^k
+    \end{equation}\\
+
+	Où X est appelé indéterminée du polynôme.\\
+
+	Le produit de deux polynômes est ainsi défini par\\
+
+	\begin{equation}
+        \left(\sum_{i=0}^n a_iX^i\right)\left(\sum_{j=0}^m b_jX^j\right) = \sum_{k=0}^{n+m} \left(\sum_{i+j = k}a_ib_j\right)X^k.
+	\end{equation}
+
+    \begin{center}
+        \includegraphics[scale=0.35]{what1}
+	    \includegraphics[scale=0.35]{what2}
+	    \includegraphics[scale=0.35]{what3}
+	    \includegraphics[scale=0.35]{what4}
+	    \includegraphics[scale=0.35]{what5}
+	    \includegraphics[scale=0.35]{what6}
+	    \includegraphics[scale=0.35]{what7}
+	    \includegraphics[scale=0.35]{what8}
+    \end{center}
+
+    \hint {
+      La video offre une explication plus... comprehensible.
+    }
+
+
+
+%******************************************************************************%
+%                                                                              %
+%                                 Introduction                                 %
+%                                                                              %
+%******************************************************************************%
+\chapter{Introduction}
+
+    Le but de ce sujet est de vous faire coder un programme qui résout
+    des équations simples. Le programme prendra en paramètre une
+    équation polynomiale. C'est-à-dire ne faisant intervenir que des
+    puissances, aucune fonction compliquée. Le programme devra
+    afficher sa (ses) solution(s).\\
+
+    Pourquoi des polynômes? Parce que c'est l'un des outils
+    mathématiques les plus simples et les plus puissants. On s'en sert
+    dans tous les domaines et à tous les niveaux pour simplifier et
+    exprimer beaucoup de choses. Par exemple, les fonctions
+    \texttt{sin}, \texttt{cos}, et \texttt{tan} sont calculées à
+    l'aide de polynômes.
+
+    \info {
+      En fait, il existe même un résultat : le théorème de
+      \texttt{Stone-Weierstrass}, qui dit que toutes les fonctions
+      "courantes", (celles qui sont bien lisses et jolies), peuvent
+      être exprimées à l'aide de polynômes.
+    }
+
+
+
+%******************************************************************************%
+%                                                                              %
+%                                  Objectifs                                   %
+%                                                                              %
+%******************************************************************************%
+\chapter{Objectifs}
+
+    L’idée est de vous faire (re)prendre contact avec la manipulation
+    d'outils mathématiques élémentaires, qui pourront vous être utiles
+    dans de nombreux autres sujets de 42. Il ne s'agit donc pas de
+    "faire des maths pour faire des maths", mais bien de vous
+    permettre d'aborder plus progressivement et sereinement les sujets
+    o\`u il y en a besoin.\\
+
+    Voici une liste non exhaustive des sujets où savoir ce que sont et
+    comment manipuler les polynômes pourrait bien vous être utile:\\
+
+	\begin{itemize}\itemsep1pt
+        \item Fractol
+	    \item RT
+	    \item mod1
+	    \item Expert System
+	    \item Infin Mult\\
+    \end{itemize}
+
+    Par ailleurs, ce petit sujet sera complété par d'autres sur des
+    sujets variés, pour comprendre ce que vous faites plutôt que
+    simplement copier une formule sur Internet.
+
+
+%******************************************************************************%
+%                                                                              %
+%                              Partie obligatoire                              %
+%                                                                              %
+%******************************************************************************%
+\chapter{Partie obligatoire}
+
+    Ecrivez un programme qui résout une équation polynomiale de
+    degr\'e inf\'erieur ou e\'gal \`a 2. Vous devrez afficher au
+    moins:\\
+
+    \begin{itemize}\itemsep1pt
+        \item La forme r\'eduite de l'\'equation.
+        \item Le degr\'e de l'\'equation.
+        \item Sa ou ses solution(s), ainsi que le signe du discrimiant
+          quand cela a du sens.\\
+    \end{itemize}
+
+      Exemples:\\
+
+    \begin{42console}
+$>./computor "5 * X^0 + 4 * X^1 - 9.3 * X^2 = 1 * X^0"
+Reduced form: 4 * X^0 + 4 * X^1 - 9.3 * X^2 = 0
+Polynomial degree: 2
+Discriminant is strictly positive, the two solutions are:
+0.905239
+-0.475131
+$>./computor "5 * X^0 + 4 * X^1 = 4 * X^0"
+Reduced form: 1 * X^0 + 4 * X^1 = 0
+Polynomial degree: 1
+The solution is:
+-0.25
+./computor "8 * X^0 - 6 * X^1 + 0 * X^2 - 5.6 * X^3 = 3 * X^0"
+Reduced form: 5 * X^0 - 6 * X^1 + 0 * X^2 - 5.6 * X^3 = 0
+Polynomial degree: 3
+The polynomial degree is stricly greater than 2, I can't solve.\end{42console}
+
+    On considèrera toujours que l'entrée est bien formatée, ie. tous
+    les termes sont de la forme $a * x^p$. Les puissances sont bien
+    ordonnées et toutes présentes. Attention, cela ne signifie pas
+    forcement que l'\'equation soit soluble ! Dans ce cas, votre
+    programme doit le d\'etecter et l'indiquer. Pensez aussi aux
+    coefficients nuls, négatifs, pas entiers ...\\
+
+    Il existe peut-\^etre des cas particuliers que vous devez
+    g\'erer. Par exemple pour l'\'equation $42 * X^0 = 42 * X^0$, tous
+    les nombres r\'eels sont solution...\\
+
+    \info {
+	  La résolution des équations de degré trois ou plus n'est pas
+      demandée. Ca ferait un excellent nouveau sujet non ? :)
+    }
+
+
+
+%******************************************************************************%
+%                                                                              %
+%                                 Partie Bonus                                 %
+%                                                                              %
+%******************************************************************************%
+\chapter{Partie bonus}
+
+    Voici une liste de bonus qu'il pourrait être utile d'implémenter:\\
+
+    \begin{itemize}
+
+        \item Gérer les erreurs sur l'entrée (lexique et syntaxe).
+
+	    \item Gérer les entrées sorties sous forme naturelle.
+        \begin{42console}
+./computor "5 + 4 * X + X^2= X^2"
+Reduced form: 5 + 4 * X = 0
+Polynomial degree: 1
+The solution is:
+-1.25\end{42console}
+
+        \item Afficher la (les) solution sous forme de fraction
+          irréductible quand c'est intéressant.
+
+	    \item Afficher des étapes intermédiaires
+
+	    \item ...
+
+    \end{itemize}
+
+%******************************************************************************%
+%                                                                              %
+%                                  Consignes                                   %
+%                                                                              %
+%******************************************************************************%
+
+\chapter{Consignes}
+
+	\begin{itemize}
+
+		\item Pensez aux solutions complexes quand le degré vaut 2 ;)
+
+		\item Le choix du langage est à votre discrétion.
+
+		\item Cela dit, vous n'avez évidemment droit à aucune
+          fonction/biblioth\`eque mathématique (hors addition et
+          multiplication de réels) que vous n'ayez pas implémentée
+          vous-mêmes.
+
+		\item Si vous travaillez dans un langage compilable (C/C++
+          notamment), vous rendrez un Makefile contenant les règles
+          habituelles.
+
+		\item En C, vous respecterez bien sûr la norme.\\
+
+	\end{itemize}
+
+    Bon courage !
+
+
+\end{document}
+%******************************************************************************%

@@ -1,0 +1,15 @@
+# ubuntu install
+>> apt-get install texlive-latex-base
+
+# Probleme de package langue
+>> apt-get install texlive-lang-french
+
+# ! LaTeX Error: File `xcolor.sty' not found.
+>> apt-get install latex-xcolor
+>> apt-get install texlive-fonts-recommended
+
+# ! LaTeX Error: File `ifplatform.sty' not found.
+>> apt-get install texlive-latex-extra
+
+#! Package minted Error: You must have `pygmentize' installed to use this package.
+>> apt-get install python-pygments
