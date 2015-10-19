@@ -1,0 +1,145 @@
+---
+name: Nom du projet
+is_primary: true
+comment: ''
+introduction_md: |
+  Nous vous demandons, pour le bon déroulement de cette notation :
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face à la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+  Bonne soutenance à tous !
+disclaimer_md: ''
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.
+correction_number: 5
+duration: 2
+sections:
+- name: Préliminaires
+  description: ''
+  questions:
+  - name: Implémentation des matrices
+    guidelines: "L'étudiant a-t-il utilisé ses propres fonctions de matrices et son
+      implémentation de stack matricielle ? En cas de présence d'une librairie externe
+      non autorisée, la soutenance s'arrête ici. \n"
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Graphics
+    - percentage: 10
+      name: Adaptation & creativity
+    position: 1
+  - name: Affichage
+    guidelines: |
+      Lancez le programme avec argument ou non selon le choix de l'étudiant. Ça affiche quelque chose qui ressemble au sujet ?
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: Graphics
+    - percentage: 10
+      name: Adaptation & creativity
+    position: 2
+  - name: Animation
+    guidelines: |
+      Maintenant que vous vous êtes assuré qu'on a bien un affichage, vérifiez la présence des animations demandées.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Graphics
+    - percentage: 10
+      name: Adaptation & creativity
+    position: 3
+  - name: Repositionnement des membres
+    guidelines: |
+      Demandez a l'étudiant de changer la taille du torse, compilez et lancez le programme, toutes les liaisons fonctionnent ? Essayez avec d'autres membres, tout doit rester cohérent.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 25
+      name: Adaptation & creativity
+    position: 4
+  - name: Modèle hiérarchique
+    guidelines: |
+      Si lors du test précédent tout s'est bien passé, demandez à l'étudiant de vous expliquer son modèle hiérarchique. Si le test précédent n'est pas passé, ne mettez pas les points.
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: Adaptation & creativity
+    position: 5
+  position: 1
+- name: Les contraintes
+  description: Vérification du respect des contraintes imposées
+  questions:
+  - name: Les fonctions de dessin
+    guidelines: |
+      Demandez à l'étudiant de vous montrer ses fonctions de dessins, les conditions suivantes sont-elles respectées : une forme géométrique de 1x1x1, a l'origine de la matrice courante et appelé une seule fois par membre ?
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 30
+      name: Graphics
+    - percentage: 30
+      name: Adaptation & creativity
+    position: 1
+  position: 2
+- name: Bonus
+  description: Vérification de la partie bonus
+  questions:
+  - name: Parties supplémentaires
+    guidelines: |
+      Y-a-t'il des parties supplémentaires sur le modèle ? C'est joli ?
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: 2
+      name: Graphics
+    - percentage: 2
+      name: Adaptation & creativity
+    position: 1
+  - name: D'autres animations
+    guidelines: |
+      D'autres animations sont-elles présentes (au moins une) ? Tout doit être cohérent.
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: 3
+      name: Graphics
+    - percentage: 3
+      name: Adaptation & creativity
+    position: 2
+  - name: Interfaces
+    guidelines: |
+      Y-a-t-il une interface "jolie" et qui fait des trucs ? Les points dépendent de sa beauté relative et des fonctionnalités disponibles.
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 5
+      name: Graphics
+    - percentage: 5
+      name: Adaptation & creativity
+    position: 3
+  - name: Bonus libre
+    guidelines: |
+      D'autres choses ? D'autres modèles ? Des bonus cools ?
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: 15
+      name: Graphics
+    - percentage: 15
+      name: Adaptation & creativity
+    position: 4
+  position: 3
