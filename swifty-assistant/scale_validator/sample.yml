@@ -1,0 +1,148 @@
+---
+name: Nom du projet
+
+is_primary: true
+comment: ''
+
+introduction_md: |
+
+  Nous vous demandons, pour le bon déroulement de cette notation :
+
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+
+  Bonne soutenance à tous !
+
+disclaimer_md: ''
+
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.
+
+correction_number: 5
+duration: 2
+
+
+sections:
+
+
+- name: Préliminaires
+  description: ''
+
+
+  questions:
+
+
+  - name: Consignes préliminaires
+    guidelines: |
+
+      Vérifiez d'abord les éléments suivants :
+
+      - Il y a bien un rendu (dans le dépôt git)
+
+      - Pas de triche, les deux étudiants doivent pouvoir expliquer
+        leur code.
+
+      - Consignes de votre choix...
+
+      Si un élément de cette liste n'est pas respecte, la notation
+      s'arrête la. Utilisez le flag approprie. Vous êtes encouragés à
+      continuer de débattre du projet, mais le barème n'est pas
+      appliqué.
+
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: <nom de la skill 1>
+      ...
+    - percentage: 0
+      name: <nom de la skill n>
+
+
+- name: Premiere section
+  description: 'La description de la premiere section'
+
+
+  questions:
+
+
+  - name: Premiere question
+    guidelines: |
+
+      Guidelines de la premiere question utilisant la syntaxe block de
+      YAML. Notez le caractere '|' juste au dessus.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: x
+      name: <nom de la skill 1>
+      ...
+    - percentage: y
+      name: <nom de la skill n>
+
+  - name: Deuxieme question
+    guidelines: |
+
+      Idem.
+
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: x
+      name: <nom de la skill 1>
+      ...
+    - percentage: y
+      name: <nom de la skill n>
+
+
+
+- name: Bonus
+  description: ''
+
+
+  questions:
+
+
+  - name: Premier bonus
+    guidelines: |
+
+      Description...
+
+    rating: bool
+    kind: bonus
+    questions_skills:
+    - percentage: x
+      name: <nom de la skill 1>
+      ...
+    - percentage: y
+      name: <nom de la skill n>
+
+
+  - name: Deuxieme bonus
+    guidelines: |
+
+      Idem.
+
+    rating: multi
+    kind: bonus
+    questions_skills:
+    - percentage: x
+      name: <nom de la skill 1>
+      ...
+    - percentage: y
+      name: <nom de la skill n>
