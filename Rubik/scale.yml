@@ -1,0 +1,230 @@
+---
+name: Rubik
+
+is_primary: true
+comment: ''
+
+introduction_md: |
+
+  Nous vous demandons, pour le bon déroulement de cette notation :
+
+  - De rester courtois, poli, respectueux, constructif lors de cet
+    échange. Le lien de confiance entre la communauté 42 et vous en
+    dépend.
+  - De bien mettre en évidence auprès de la personne notée (ou du
+    groupe) les dysfonctionnements éventuels.
+  - D'accepter qu'il puisse y avoir parfois des différences
+    d’interprétation sur les demandes du sujet ou l’étendue des
+    fonctionnalités. Restez ouvert d'esprit face a la vision de
+    l'autre (a-t-il raison ou tort ?), et notez le plus honnêtement
+    possible.
+
+  Bonne soutenance à tous !
+
+disclaimer_md: ''
+
+guidelines_md: |
+  RAPPELEZ VOUS QUE VOUS NE DEVEZ CORRIGER QUE CE QUI SE TROUVE SUR LE DÉPÔT DE RENDU DE L'ÉTUDIANT.
+
+  Il s'agit de faire un "git clone" du dépôt de rendu, et de corriger ce qui s'y trouve.
+
+  Si le correcteur n'a pas encore fait ce projet, il est obligatoire
+  de lire le sujet en entier avant de commencer cette soutenance.
+
+correction_number: 5
+duration: 2
+
+
+sections:
+
+
+- name: Préliminaires
+  description: ''
+
+
+  questions:
+
+
+  - name: Consignes préliminaires
+    guidelines: |
+
+      Vérifiez d'abord les éléments suivants :
+
+      - Il y a bien un rendu (dans le dépôt git)
+
+      - Pas de triche, l'étudiant doit pouvoir expliquer
+        son code.
+
+      - Norme si applicable, fichier auteur, librairies externes utilisees à justifier...
+
+      Si un élément de cette liste n'est pas respecté, la notation
+      s'arrête là. Utilisez le flag approprie. Vous êtes encouragés à
+      continuer de débattre du projet, mais le barème n'est pas
+      appliqué.
+
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 0
+      name: <Rigor>
+    - percentage: 0
+      name: <Imperative programming>
+    - percentage: 0
+      name: <Algorithms & AI>
+
+
+- name: Partie obligatoire
+  description: 'Problèmes simples'
+
+
+  questions:
+
+
+  - name: Gestion d'erreur
+    guidelines: |
+
+      Essayez le programme sans paramètre, avec trop de paramètres, avec des paramètres invalides, avec un fichier contenant des séquences non valides... Bref, essayez de mettre le programme en défaut. Est-ce que le programme a bien les comportements attendus (affichage de l'usage, quitte avec un message, etc.) ?
+
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 15
+      name: <Imperative programming>
+    - percentage: 10
+      name: <Algorithms & AI>
+
+  - name: Position simple
+    guidelines: |
+
+      Essayez le programme avec des mélanges simples, jusqu'à 4-5 mouvements seulement. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 25
+      name: <Rigor>
+    - percentage: 25
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Position un peu plus complexe
+    guidelines: |
+
+      Essayez le programme avec des mélanges plus complexes, entre 5 et 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: <Rigor>
+    - percentage: 20
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Position aléatoire
+    guidelines: |
+
+      Essayez le programme avec des mélanges aléatoires, de taille supérieure à 20 mouvements. Est-ce que le résultat est correct ? S'affiche-t-il dans un délai raisonnable (2-3 secondes) ? Si la réponse à l'une de ces questions est non, la soutenance s'arrête là.
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 20
+      name: <Rigor>
+    - percentage: 20
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Performance
+    guidelines: |
+
+      Pour des mélanges de taille supérieures à une trentaine de mouvements, le programme est-il capable de le résoudre en moyenne en moins de 150 mouvements et toujours sous 2-3 secondes, affichage compris ?
+	  Si la réponse est non, alors mettez 0 à cette question.
+	  Ajoutez 1 point par tranche de 20 mouvements gagnés.
+
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 5
+      name: <Rigor>
+    - percentage: 5
+      name: <Imperative programming>
+    - percentage: 20
+      name: <Algorithms & AI>
+
+
+  - name: Distance-20
+    guidelines: |
+
+      U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2
+	  Cette position, appelée superflip, fait partie des positions qui nécessitent toujours au moins 20 mouvements pour être résolues ("Distance-20"). Est-ce que le programme résout ce Cube dans un nombre de mouvements comparable aux résultats des questions précédentes ? Essayez avec d'autres mélanges de ce type (http://www.cube20.org/distance20s/).
+
+    rating: bool
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 15
+      name: <Imperative programming>
+    - percentage: 10
+      name: <Algorithms & AI>
+
+
+
+- name: Bonus
+  description: 'Partie bonus'
+
+
+  questions:
+
+
+  - name: Bonus du programme
+    guidelines: |
+
+      L'échelle des bonus est au libre jugement du correcteur. Un bonus vraiment hardcore mérite plus que deux bonus vraiment easy. Par exemple, parmi les bonus super classes, qui devraient valoir beaucoup de points s'ils sont correctement réalisés :
+	  - Présence d'une réelle interface graphique en 3D qui déboîte (par exemple qui montre la résolution au coup par coup)
+	  - Un algorithme vraiment bourrin qui descend aux frontières de ce qui est possible (une moyenne à moins de 30 mouvements, toujours en quelques secondes, c'est vraiment très très TRES bien et mérite clairement un gros bonus)
+	  - Un choix entre plusieurs algorithmes de résolution, voire la sélection automatique du meilleur de ces algorithmes selon le cas
+	  - Un programme qui accepte d'autres puzzles de taille n ou de formes bizarres (2x2x2, 4x4x4, Megaminx, Square-1...)
+	  - ...
+	  
+	  Dans les bonus vraiment moins hardcore mais néanmoins utiles, on peut par exemple trouver :
+	  - Un générateur de mélanges,
+	  - Une subdivision de la réponse en étapes "humainement compréhensibles"
+	  - ...
+
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 10
+      name: <Rigor>
+    - percentage: 25
+      name: <Imperative programming>
+    - percentage: 10
+      name: <Algorithms & AI>
+
+
+  - name: Bonus du corrigé
+    guidelines: |
+
+      Trouvez un Rubik's Cube et démontrez votre agilité. Plus c'est impressionnant, mieux c'est. Indice : Sous 30-40 secondes, c'est TRES impressionnant. Mais il n'y a pas que la vitesse dans la vie, faites preuve d'inventivité ! Et parlez-en entre vous... :-)
+
+    rating: multi
+    kind: standard
+    questions_skills:
+    - percentage: 15
+      name: <Rigor>
+    - percentage: 0
+      name: <Imperative programming>
+    - percentage: 15
+      name: <Algorithms & AI>
